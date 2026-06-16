@@ -9,7 +9,7 @@ interface Project {
   description: string;
   highlights: string[];
   tech: string[];
-  githubUrl: string;
+  githubUrl?: string;
   demoUrl?: string;
   iconType: "ml" | "web" | "mobile";
 }
@@ -26,8 +26,6 @@ const projects: Project[] = [
       "FastAPI REST layer for backend inference and orchestration."
     ],
     tech: ["Python", "FastAPI", "Machine Learning", "Random Forest", "RFM Analysis", "Meta Cloud API"],
-    githubUrl: "#", // Placeholder
-    demoUrl: "#", // Placeholder
     iconType: "ml"
   },
   {
@@ -41,7 +39,6 @@ const projects: Project[] = [
       "Conducted rigorous code reviews and quality assurance check points."
     ],
     tech: ["Next.js", "React.js", "TypeScript", "Tailwind CSS", "Team Leadership"],
-    githubUrl: "#",
     iconType: "web"
   },
   {
@@ -55,7 +52,6 @@ const projects: Project[] = [
       "Ensured pixel-perfect rendering and native-level scrolling performance."
     ],
     tech: ["React Native", "JavaScript", "Mobile UI/UX", "Figma to Code", "Android & iOS"],
-    githubUrl: "#",
     iconType: "mobile"
   }
 ];
@@ -119,14 +115,16 @@ export default function ProjectList() {
                 </div>
 
                 <div className="flex items-center gap-3 pt-4 border-t border-border/40 text-xs">
-                  <a
-                    href={project.githubUrl}
-                    className="flex items-center gap-1.5 font-semibold text-muted hover:text-foreground transition-colors cursor-pointer"
-                    aria-label={`View code for ${project.title}`}
-                  >
-                    <Github className="w-4 h-4" />
-                    <span>Source</span>
-                  </a>
+                  {project.githubUrl && (
+                    <a
+                      href={project.githubUrl}
+                      className="flex items-center gap-1.5 font-semibold text-muted hover:text-foreground transition-colors cursor-pointer"
+                      aria-label={`View code for ${project.title}`}
+                    >
+                      <Github className="w-4 h-4" />
+                      <span>Source</span>
+                    </a>
+                  )}
                   {project.demoUrl && (
                     <a
                       href={project.demoUrl}
