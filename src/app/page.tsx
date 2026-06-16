@@ -56,9 +56,6 @@ export default function Home() {
             Specializing in high-performance React, Next.js, React Native, and Node.js solutions. Focused on clean code, UI/UX fidelity, and robust application architectures.
           </p>
 
-          <h1>test
-          </h1>
-
           {/* Call to Actions */}
           <div className="flex flex-col sm:flex-row gap-4 w-full justify-center px-4 sm:px-0 mb-12">
             <a
