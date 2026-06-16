@@ -15,9 +15,9 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Samuel Rantung | Senior Full Stack & Frontend Developer Portfolio",
+  title: "Samuel Rantung | Full Stack & Frontend Developer Portfolio",
   description:
-    "Portfolio of Samuel Rantung, a Senior Full Stack & Frontend Developer specializing in React, Next.js, React Native, and Node.js. Discover his interactive experience timeline and web development projects.",
+    "Portfolio of Samuel Rantung, a Full Stack & Frontend Developer specializing in React, Next.js, React Native, and Node.js. Discover his interactive experience timeline and web development projects.",
   keywords: [
     "Samuel Rantung",
     "Full Stack Developer",
