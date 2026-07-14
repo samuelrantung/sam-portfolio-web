@@ -1,6 +1,6 @@
 "use client";
 
-import { ExternalLink, Code, Sparkles, Users, Smartphone } from "lucide-react";
+import { ExternalLink, Sparkles, Users, Smartphone } from "lucide-react";
 import { Github } from "@/components/BrandIcons";
 
 interface Project {

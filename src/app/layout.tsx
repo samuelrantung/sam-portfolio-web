@@ -1,7 +1,11 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Outfit } from "next/font/google";
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
+import ScrollReveal from "@/components/ScrollReveal";
+import AgencyNavbar from "@/components/agency/AgencyNavbar";
+import AgencyFooter from "@/components/agency/AgencyFooter";
+import { getDictionary, defaultLocale } from "@/lib/i18n";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -16,20 +20,21 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Samuel Rantung | Full Stack & Frontend Developer Portfolio",
+  title: {
+    default: "Imaginnative | Partner Digital untuk Bisnis Sulawesi Utara",
+    template: "%s | Imaginnative",
+  },
   description:
-    "Portfolio of Samuel Rantung, a Full Stack & Frontend Developer specializing in React, Next.js, React Native, and Node.js. Discover his interactive experience timeline and web development projects.",
+    "Imaginnative membantu bisnis di Sulawesi Utara go digital — dari website profesional and landing page sampai aplikasi custom dan digitalisasi operasional.",
   keywords: [
-    "Samuel Rantung",
-    "Full Stack Developer",
-    "Frontend Developer",
-    "React Developer",
-    "Next.js Developer",
-    "Software Engineer Portfolio",
-    "Indonesia Developer",
+    "jasa pembuatan website Manado",
+    "jasa pembuatan website Sulawesi Utara",
+    "digitalisasi UMKM",
+    "jasa pembuatan aplikasi",
+    "Imaginnative",
   ],
   authors: [{ name: "Samuel Rantung" }],
-  creator: "Samuel Rantung",
+  creator: "Imaginnative",
 };
 
 export const viewport: Viewport = {
@@ -53,16 +58,16 @@ const themeInitScript = `
   })();
 `;
 
-import ScrollReveal from "@/components/ScrollReveal";
-
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const dict = getDictionary(defaultLocale);
+
   return (
     <html
-      lang="en"
+      lang={defaultLocale}
       className={`${inter.variable} ${outfit.variable} h-full`}
       suppressHydrationWarning
     >
@@ -72,7 +77,9 @@ export default function RootLayout({
       <body className="min-h-full bg-background text-foreground antialiased flex flex-col font-sans">
         <Analytics />
         <ScrollReveal />
+        <AgencyNavbar dict={dict} locale={defaultLocale} />
         {children}
+        <AgencyFooter dict={dict} locale={defaultLocale} />
       </body>
     </html>
   );
