@@ -10,7 +10,7 @@ export const id = {
   },
   cta: {
     whatsappLabel: "Konsultasi via WhatsApp",
-    whatsappNote: "tanpa komitmen",
+    whatsappNote: "tanpa biaya",
     whatsappMessage:
       "Halo Imaginnative, saya ingin konsultasi tentang kebutuhan digital bisnis saya.",
   },
@@ -19,126 +19,126 @@ export const id = {
       titleLead: "Bisnis Anda Layak",
       titleHighlight: "Ditemukan",
       subtitle:
-        "Partner digital untuk bisnis Sulawesi Utara - dari website profesional dan landing page, sampai aplikasi custom dan digitalisasi operasional.",
+        "Partner digital pilihan untuk bisnis di Sulawesi Utara - dari website professional, hingga aplikasi dan sistem custom untuk digitalisasi bisnis anda.",
       trust: {
-        founderLed: "Dipimpin langsung oleh engineer-nya",
-        roi: "Project perdana kami sudah balik modal untuk kliennya",
+        founderLed: "Dipimpin langsung oleh professional engineer",
+        roi: "Terbukti menjadi solusi investasi nyata untuk bisnis",
         local: "Berbasis di Sulawesi Utara",
       },
     },
     pain: {
-      heading: "Sering pusing karena ini?",
-      beforeLabel: "Kondisi sekarang",
-      afterLabel: "Setelah dibantu Imaginnative",
+      heading: "Having this trouble?",
+      beforeLabel: "PROBLEM",
+      afterLabel: "WITH US",
       items: {
         visibility: {
-          before: "Saat calon pelanggan cari jasa Anda di Google, malah kompetitor yang kelihatan.",
-          after: "Bisnis Anda muncul paling atas, lengkap dengan tombol hubungi langsung.",
+          before: "Calon customer mencari bisnis anda di Google, tapi kompetitor yang muncul.",
+          after: "Bisnis anda muncul teratas, lengkap dengan informasi kontak.",
         },
         operations: {
-          before: "Pesanan masih dicatat di kertas atau harus rekap chat manual satu per satu.",
-          after: "Semua data rapi di satu sistem, gampang dipantau langsung dari HP.",
+          before: "Pesanan masih dicatat manual, belum ada sistem yang mempermudah operasional.",
+          after: "Semua data tercatat rapi di satu sistem dan bisa dipantau kapan saja.",
         },
         image: {
-          before: "Tampilan online kompetitor kelihatan jauh lebih meyakinkan.",
-          after: "Website Anda terlihat profesional dan bikin calon pembeli langsung percaya.",
+          before: "Website kompetitor kelihatan lebih meyakinkan.",
+          after: "Website anda terlihat lebih profesional dan meningkatkan kepercayaan customer.",
         },
       },
     },
     services: {
-      heading: "Layanan kami",
-      subheading: "Mulai dari yang paling bisnis Anda butuhkan.",
-      cardCta: "Pelajari lebih lanjut",
+      heading: "Our Services",
+      subheading: "Mulai dengan apa yang paling dibutuhkan bisnis anda.",
+      cardCta: "View more",
       items: {
         website: {
           title: "Website & Landing Page",
-          outcome: "Bisnis Anda ditemukan dan dipercaya calon customer.",
-          price: "Mulai dari Rp 3 juta",
+          outcome: "Buat bisnis anda ditemukan dan bangun kepercayaan dengan customer.",
+          price: "Start from Rp 3 juta",
         },
         aplikasi: {
-          title: "Aplikasi Web & Mobile Custom",
-          outcome: "Sistem yang dibangun mengikuti cara kerja bisnis Anda.",
-          price: "Didiskusikan sesuai kebutuhan",
+          title: "Aplikasi & Sistem Custom",
+          outcome: "Bangun sistem yang mengikuti operasional bisnis anda untuk meningkatkan produktifitas, efektifitas, hingga revenue bisnis.",
+          price: "Diskusikan sesuai kebutuhan",
         },
         digitalisasi: {
           title: "Digitalisasi Operasional",
-          outcome: "POS, WhatsApp Business, sampai pembayaran online — operasional jadi rapi.",
-          price: "Didiskusikan sesuai kebutuhan",
+          outcome: "Point of Sales, WhatsApp Business, sampai pembayaran online — operasional yang lebih rapi.",
+          price: "Diskusikan sesuai kebutuhan",
         },
         maintenance: {
           title: "Perawatan & Pengembangan",
-          outcome: "Website selalu aman, cepat, dan berkembang bersama bisnis Anda.",
-          price: "Didiskusikan sesuai kebutuhan",
+          outcome: "Buat website dan aplikasi anda selalu aman, cepat, dan tetap berkembang dengan bisnis anda.",
+          price: "Diskusikan sesuai kebutuhan",
         },
       },
     },
     proof: {
-      heading: "Bukti, bukan janji",
+      heading: "Terbukti, bukan janji",
       caseStudy: {
         label: "Case Study",
         client: "PT Seraya Bahari Agensi",
-        industry: "Agensi pelayaran — Bitung, Sulawesi Utara",
+        industry: "Shipping agency - Bitung, Sulawesi Utara",
         story:
-          "Seraya Bahari melayani keagenan kapal di koridor maritim Indonesia timur, tapi belum punya kehadiran online yang meyakinkan. Kami membangun landing page-nya dari nol: profil layanan, jangkauan cabang, dan kontak WhatsApp yang mudah dihubungi.",
+          "Seraya Bahari Agensi merupakan keagenan kapal di koridor maritim Indonesia timur, berbasis di Bitung tapi membutuhkan kehadiran digital secara international. Kami berhasil membangun landing page profesional meliputi: profil layanan, jangkauan cabang, hingga kontak WhatsApp yang mempermudah calon klien untuk menghubungi.",
         resultLabel: "Hasilnya",
         result:
-          "Customer baru menghubungi Seraya setelah menemukan kontaknya lewat website — dan nilai project website-nya kembali dari revenue customer tersebut.",
+          "Dengan kehadiran website yang kami kembangkan, seorang klien international berhasil menjangkau mereka melalui informasi kontak yang tertera di website yang kami buat. Nilai transaksi yang ada telah menjadi bukti nyata akan investasi yang menaikkan revenue dari perusahaan.",
         visit: "Lihat websitenya",
       },
       testimonial: {
         heading: "Kata klien kami",
         quote:
-          "Website dari Imaginnative bukan sekadar tampilan. Ada customer baru yang menghubungi kami karena menemukan kontak lewat website — nilai investasinya sudah kembali.",
+          "Website dari Imaginnative bukan sekadar tampilan. Ada customer baru yang menghubungi kami karena menemukan kontak lewat website kami, dan nilai investasinya sudah kembali.",
         attribution: "Owner, PT Seraya Bahari Agensi",
       },
     },
     founder: {
       heading: "Di balik Imaginnative",
       body:
-        "Imaginnative dipimpin langsung oleh Samuel Rantung, Full Stack Developer berpengalaman membangun produk web dan mobile. Tidak ada lapisan account manager — Anda berdiskusi langsung dengan orang yang membangun produk Anda, dari konsultasi pertama sampai launch.",
-      linkLabel: "Kenali Samuel",
+        "Imaginnative dipimpin langsung oleh Samuel Rantung, Software Developer berpengalaman membangun produk web dan mobile. Tanpa komunikasi berlapis, diskusi langsung dengan orang yang membangun produk anda, dari konsultasi pertama sampai launch.",
+      linkLabel: "Know more",
     },
     process: {
       heading: "Cara kerja kami",
       steps: {
         consult: {
-          title: "Konsultasi",
-          desc: "Ceritakan kebutuhan bisnis Anda via WhatsApp. Kami bantu petakan solusi dan estimasinya — tanpa komitmen.",
+          title: "Constulation",
+          desc: "Ceritakan kebutuhan bisnis anda, hubungi lewat WhatsApp atau ketemu langsung. Kami bantu memberikan solusi dan estimasinya tanpa biaya.",
         },
         build: {
-          title: "Desain & Build",
-          desc: "Kami kerjakan dengan update progres berkala, jadi Anda selalu tahu sampai mana.",
+          title: "Design & Development",
+          desc: "Kami kerjakan dengan update progres secara berkala.",
         },
         launch: {
           title: "Launch & Care",
-          desc: "Setelah live, kami pastikan semuanya berjalan — dan siap berkembang bersama bisnis Anda.",
+          desc: "Setelah live, kami akan pastikan semuanya berjalan tanpa kendala dan siap berkembang bersama bisnis Anda.",
         },
       },
     },
     faq: {
-      heading: "Pertanyaan yang sering muncul",
+      heading: "Frequently Asked Questions",
       items: {
         cost: {
           q: "Berapa biaya pembuatan website?",
-          a: "Landing page mulai dari Rp 3 juta dan company website mulai dari Rp 5 juta — tergantung kebutuhan halaman dan fitur. Aplikasi custom dan digitalisasi operasional didiskusikan sesuai kebutuhan.",
+          a: "Website sederhana seperti landing page mulai dari Rp 3 juta, bisa didiskusikan tergantung kebutuhan anda. Pembuatan aplikasi dan sistem custom didiskusikan sesuai kebutuhan.",
         },
         duration: {
           q: "Berapa lama prosesnya?",
-          a: "Landing page umumnya selesai dalam hitungan minggu; project yang lebih kompleks kami petakan timeline-nya di awal, jadi Anda tahu ekspektasinya sebelum mulai.",
+          a: "Landing page umumnya selesai dalam hitungan minggu dan project yang lebih kompleks akan memerlukan diskusi timeline, jadi anda tahu ekspektasinya sebelum mulai.",
         },
         nonTech: {
-          q: "Saya tidak paham teknologi — apakah bisa?",
-          a: "Justru itu tugas kami. Anda cukup cerita soal bisnis Anda; urusan teknis, hosting, dan domain kami yang tangani, dan semuanya dijelaskan dalam bahasa yang mudah dipahami.",
+          q: "Saya tidak paham teknologi, apakah bisa?",
+          a: "Itulah tugas kami. Anda cukup menceritakan bisnis anda; urusan technical bisa sepenuhnya kami yang tangani, dan kami siap berdiskusi kapanpun.",
         },
         after: {
           q: "Setelah website jadi, bagaimana?",
-          a: "Website butuh dirawat agar tetap aman dan cepat. Kami menyediakan layanan perawatan & pengembangan berkelanjutan — atau website diserahkan sepenuhnya ke Anda jika itu yang diinginkan.",
+          a: "Kami menyediakan layanan perawatan & pengembangan berkelanjutan jika diperlukan.",
         },
       },
     },
     finalCta: {
-      heading: "Siap membuat bisnis Anda ditemukan?",
-      subheading: "Ceritakan kebutuhan Anda — kami bantu petakan langkah digitalisasinya.",
+      heading: "Butuh konsultasi?",
+      subheading: "Ceritakan kebutuhan maupun masalah anda, kami bantu berikan strategi terbaik.",
     },
   },
   layanan: {
@@ -237,7 +237,7 @@ export const id = {
         faq: [
           {
             q: "Bisnis saya kecil — apakah aplikasi custom tidak berlebihan?",
-            a: "Kadang iya, dan kami akan bilang jujur kalau kebutuhan Anda cukup diselesaikan dengan tools yang sudah ada. Aplikasi custom baru masuk akal ketika proses bisnis Anda spesifik and volume pekerjaannya menuntut sistem sendiri.",
+            a: "Kadang iya, dan kami akan bilang jujur kalau kebutuhan Anda cukup diselesaikan dengan tools yang sudah ada. Aplikasi custom baru masuk akal ketika proses bisnis Anda spesifik dan volume pekerjaannya menuntut sistem sendiri.",
           },
           {
             q: "Berapa lama pembuatan aplikasi?",

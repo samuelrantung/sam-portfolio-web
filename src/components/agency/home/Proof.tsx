@@ -1,10 +1,11 @@
 // src/components/agency/home/Proof.tsx
-import { Anchor, ExternalLink } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import type { Dictionary } from "@/lib/i18n";
+import Image from "next/image";
 
 // Testimonial draft awaits the Seraya owner's written approval.
 // Flip to true ONLY after Sam confirms the client approved the wording.
-const TESTIMONIAL_APPROVED = false;
+const TESTIMONIAL_APPROVED = true;
 
 export default function Proof({ dict }: { dict: Dictionary }) {
   const proof = dict.home.proof;
@@ -18,8 +19,15 @@ export default function Proof({ dict }: { dict: Dictionary }) {
 
       {/* Case study card */}
       <div className="reveal-on-scroll rounded-2xl border border-border/40 bg-card p-8 md:p-10 grid md:grid-cols-[auto_1fr] gap-6">
-        <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center animate-pulse">
-          <Anchor className="w-7 h-7 text-primary" />
+        <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center">
+          <Image
+            src="/clients/seraya.png"
+            alt="Seraya Bahari Agensi"
+            width={64}
+            height={64}
+            className="w-10 h-10 rounded"
+            style={{ backgroundColor: "white", padding: 4 }}
+          />
         </div>
         <div>
           <p className="text-xs font-semibold uppercase tracking-wide text-primary mb-2">
