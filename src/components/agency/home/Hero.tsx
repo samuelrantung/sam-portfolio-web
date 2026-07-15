@@ -4,7 +4,7 @@ import Image from "next/image";
 import { MessageCircle, ArrowRight, UserCheck, TrendingUp, MapPin } from "lucide-react";
 import type { Dictionary, Locale } from "@/lib/i18n";
 import { localePath } from "@/lib/i18n";
-import { whatsappUrl } from "@/lib/whatsapp";
+import WhatsAppLink from "../WhatsAppLink";
 
 export default function Hero({ dict, locale }: { dict: Dictionary; locale: Locale }) {
   const hero = dict.home.hero;
@@ -25,16 +25,15 @@ export default function Hero({ dict, locale }: { dict: Dictionary; locale: Local
         </p>
 
         <div className="flex flex-col items-center md:items-start gap-3">
-          <a
-            href={whatsappUrl(dict.cta.whatsappMessage)}
-            target="_blank"
-            rel="noopener noreferrer"
+          <WhatsAppLink
+            message={dict.cta.whatsappMessage}
+            source="home_hero"
             className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-primary text-primary-foreground hover:bg-primary/90 font-semibold text-sm shadow-md hover:shadow-lg transition-all duration-300"
           >
             <MessageCircle className="w-4 h-4" />
             {dict.cta.whatsappLabel}
             <ArrowRight className="w-4 h-4 ml-1" />
-          </a>
+          </WhatsAppLink>
           <span className="text-xs text-muted">{dict.cta.whatsappNote}</span>
         </div>
 

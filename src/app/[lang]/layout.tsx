@@ -1,11 +1,15 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Outfit } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
-import "./globals.css";
+import { notFound } from "next/navigation";
+import { GoogleAnalytics } from "@next/third-parties/google";
+import { SITE_URL, GA_ID } from "@/lib/site";
+import { organizationJsonLd, jsonLdScript } from "@/lib/schema";
+import "../globals.css";
 import ScrollReveal from "@/components/ScrollReveal";
 import AgencyNavbar from "@/components/agency/AgencyNavbar";
 import AgencyFooter from "@/components/agency/AgencyFooter";
-import { getDictionary, defaultLocale } from "@/lib/i18n";
+import { getDictionary, hasLocale } from "@/lib/i18n";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -20,12 +24,13 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "Imaginnative | Partner Digital untuk Bisnis Sulawesi Utara",
     template: "%s | Imaginnative",
   },
   description:
-    "Imaginnative membantu bisnis di Sulawesi Utara go digital — dari website profesional and landing page sampai aplikasi custom dan digitalisasi operasional.",
+    "Imaginnative membantu bisnis di Sulawesi Utara go digital — dari website profesional dan landing page sampai aplikasi custom dan digitalisasi operasional.",
   keywords: [
     "jasa pembuatan website Manado",
     "jasa pembuatan website Sulawesi Utara",
@@ -58,16 +63,24 @@ const themeInitScript = `
   })();
 `;
 
-export default function RootLayout({
+export async function generateStaticParams() {
+  return [{ lang: "id" }, { lang: "en" }];
+}
+
+export default async function RootLayout({
   children,
-}: Readonly<{
+  params,
+}: {
   children: React.ReactNode;
-}>) {
-  const dict = getDictionary(defaultLocale);
+  params: Promise<{ lang: string }>;
+}) {
+  const { lang } = await params;
+  if (!hasLocale(lang)) notFound();
+  const dict = getDictionary(lang);
 
   return (
     <html
-      lang={defaultLocale}
+      lang={lang}
       className={`${inter.variable} ${outfit.variable} h-full`}
       suppressHydrationWarning
     >
@@ -75,12 +88,17 @@ export default function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>
       <body className="min-h-full bg-background text-foreground antialiased flex flex-col font-sans">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: jsonLdScript(organizationJsonLd()) }}
+        />
         <Analytics />
         <ScrollReveal />
-        <AgencyNavbar dict={dict} locale={defaultLocale} />
+        <AgencyNavbar dict={dict} locale={lang} />
         {children}
-        <AgencyFooter dict={dict} locale={defaultLocale} />
+        <AgencyFooter dict={dict} locale={lang} />
       </body>
+      <GoogleAnalytics gaId={GA_ID} />
     </html>
   );
 }

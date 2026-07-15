@@ -8,3 +8,6 @@
 ## Build & Verification
 - Do NOT run builds (`npm run build`, `vite build`, etc.) to verify that code compiles.
 - Instead, check for errors using the linter (e.g. `npm run lint` / ESLint) and TypeScript diagnostics.
+
+## Humanizer
+- Use /humanizer skill for every copy writing text

@@ -3,7 +3,7 @@ import Image from "next/image";
 import { MessageCircle } from "lucide-react";
 import type { Dictionary, Locale } from "@/lib/i18n";
 import { localePath } from "@/lib/i18n";
-import { whatsappUrl } from "@/lib/whatsapp";
+import WhatsAppLink from "./WhatsAppLink";
 
 export default function AgencyFooter({
   dict,
@@ -30,18 +30,29 @@ export default function AgencyFooter({
         </div>
 
         <div className="flex flex-col sm:items-end items-center gap-3">
-          <a
-            href={whatsappUrl(dict.cta.whatsappMessage)}
-            target="_blank"
-            rel="noopener noreferrer"
+          <WhatsAppLink
+            message={dict.cta.whatsappMessage}
+            source="footer"
             className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors"
           >
             <MessageCircle className="w-4 h-4" />
             {dict.cta.whatsappLabel}
-          </a>
+          </WhatsAppLink>
           <nav className="flex items-center gap-4 text-sm text-muted">
             <Link href={localePath(locale, "/")} className="hover:text-foreground transition-colors">
               {dict.nav.home}
+            </Link>
+            <Link href={localePath(locale, "/layanan")} className="hover:text-foreground transition-colors">
+              {dict.nav.services}
+            </Link>
+            <Link href={localePath(locale, "/portofolio")} className="hover:text-foreground transition-colors">
+              {dict.nav.portfolio}
+            </Link>
+            <Link href={localePath(locale, "/tentang")} className="hover:text-foreground transition-colors">
+              {dict.nav.about}
+            </Link>
+            <Link href={localePath(locale, "/kontak")} className="hover:text-foreground transition-colors">
+              {dict.nav.contact}
             </Link>
             <Link href={localePath(locale, "/tentang/samuel")} className="hover:text-foreground transition-colors">
               {dict.nav.aboutSamuel}

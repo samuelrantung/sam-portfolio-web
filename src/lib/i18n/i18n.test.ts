@@ -38,3 +38,72 @@ describe("localePath", () => {
     expect(localePath("en", "/tentang/samuel")).toBe("/en/tentang/samuel");
   });
 });
+
+import { hasLocale } from "./index";
+import { resolveLocaleRouting, toggleHref } from "./routing";
+
+describe("hasLocale", () => {
+  it("accepts supported locales only", () => {
+    expect(hasLocale("id")).toBe(true);
+    expect(hasLocale("en")).toBe(true);
+    expect(hasLocale("fr")).toBe(false);
+  });
+});
+
+describe("resolveLocaleRouting", () => {
+  it("passes /en paths through", () => {
+    expect(resolveLocaleRouting("/en")).toEqual({ action: "passthrough" });
+    expect(resolveLocaleRouting("/en/layanan")).toEqual({ action: "passthrough" });
+  });
+
+  it("redirects direct /id paths to canonical root", () => {
+    expect(resolveLocaleRouting("/id")).toEqual({ action: "redirect", target: "/" });
+    expect(resolveLocaleRouting("/id/layanan/website")).toEqual({
+      action: "redirect",
+      target: "/layanan/website",
+    });
+  });
+
+  it("rewrites prefix-less paths to /id internally", () => {
+    expect(resolveLocaleRouting("/")).toEqual({ action: "rewrite", target: "/id" });
+    expect(resolveLocaleRouting("/layanan")).toEqual({
+      action: "rewrite",
+      target: "/id/layanan",
+    });
+  });
+
+  it("does not treat /enterprise as an /en path", () => {
+    expect(resolveLocaleRouting("/enterprise")).toEqual({
+      action: "rewrite",
+      target: "/id/enterprise",
+    });
+  });
+});
+
+describe("toggleHref", () => {
+  it("maps ID pages to their EN mirror", () => {
+    expect(toggleHref("/")).toBe("/en");
+    expect(toggleHref("/layanan/website")).toBe("/en/layanan/website");
+  });
+
+  it("maps EN pages back to root", () => {
+    expect(toggleHref("/en")).toBe("/");
+    expect(toggleHref("/en/layanan/website")).toBe("/layanan/website");
+  });
+});
+
+import { alternatesFor } from "./index";
+
+describe("alternatesFor", () => {
+  it("declares ID as canonical with EN alternate", () => {
+    expect(alternatesFor("/layanan/website")).toEqual({
+      canonical: "/layanan/website",
+      languages: {
+        id: "/layanan/website",
+        en: "/en/layanan/website",
+        "x-default": "/layanan/website",
+      },
+    });
+  });
+});
+

@@ -19,3 +19,17 @@ export function localePath(locale: Locale, path: string): string {
   if (locale === defaultLocale) return path;
   return path === "/" ? "/en" : `/en${path}`;
 }
+
+export const hasLocale = (s: string): s is Locale =>
+  (locales as readonly string[]).includes(s);
+
+export function alternatesFor(path: string) {
+  return {
+    canonical: path,
+    languages: {
+      id: path,
+      en: localePath("en", path),
+      "x-default": path,
+    },
+  };
+}

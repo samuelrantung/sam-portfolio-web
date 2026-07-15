@@ -84,7 +84,7 @@ const experiences: Job[] = [
 ];
 
 export default function ExperienceTimeline() {
-  const [filter, setFilter] = useState<"All" | "Full Stack" | "Frontend" | "Mobile">("All");
+  const [filter] = useState<"All" | "Full Stack" | "Frontend" | "Mobile">("All");
   const [expandedIndex, setExpandedIndex] = useState<number | null>(0); // First item expanded by default
 
   const toggleExpand = (index: number) => {

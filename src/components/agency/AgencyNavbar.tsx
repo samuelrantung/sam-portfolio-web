@@ -6,9 +6,10 @@ import Link from "next/link";
 import Image from "next/image";
 import { Menu, X, MessageCircle } from "lucide-react";
 import ThemeToggle from "@/components/ThemeToggle";
+import LanguageToggle from "@/components/agency/LanguageToggle";
 import type { Dictionary, Locale } from "@/lib/i18n";
 import { localePath } from "@/lib/i18n";
-import { whatsappUrl } from "@/lib/whatsapp";
+import WhatsAppLink from "./WhatsAppLink";
 
 export default function AgencyNavbar({
   dict,
@@ -21,7 +22,10 @@ export default function AgencyNavbar({
 
   const navItems = [
     { label: dict.nav.home, href: localePath(locale, "/") },
-    { label: dict.nav.aboutSamuel, href: localePath(locale, "/tentang/samuel") },
+    { label: dict.nav.services, href: localePath(locale, "/layanan") },
+    { label: dict.nav.portfolio, href: localePath(locale, "/portofolio") },
+    { label: dict.nav.about, href: localePath(locale, "/tentang") },
+    { label: dict.nav.contact, href: localePath(locale, "/kontak") },
   ];
 
   return (
@@ -54,20 +58,21 @@ export default function AgencyNavbar({
                 {item.label}
               </Link>
             ))}
-            <a
-              href={whatsappUrl(dict.cta.whatsappMessage)}
-              target="_blank"
-              rel="noopener noreferrer"
+            <WhatsAppLink
+              message={dict.cta.whatsappMessage}
+              source="navbar"
               className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-primary text-primary-foreground hover:bg-primary/90 font-semibold text-sm transition-all duration-300"
             >
               <MessageCircle className="w-4 h-4" />
               {dict.cta.whatsappLabel}
-            </a>
+            </WhatsAppLink>
+            <LanguageToggle locale={locale} />
             <ThemeToggle />
           </div>
 
           {/* Mobile controls */}
           <div className="md:hidden flex items-center gap-2">
+            <LanguageToggle locale={locale} />
             <ThemeToggle />
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -93,16 +98,15 @@ export default function AgencyNavbar({
               {item.label}
             </Link>
           ))}
-          <a
-            href={whatsappUrl(dict.cta.whatsappMessage)}
-            target="_blank"
-            rel="noopener noreferrer"
+          <WhatsAppLink
+            message={dict.cta.whatsappMessage}
+            source="navbar_mobile"
             onClick={() => setIsOpen(false)}
             className="mt-2 inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-primary text-primary-foreground font-semibold text-base"
           >
             <MessageCircle className="w-4 h-4" />
             {dict.cta.whatsappLabel}
-          </a>
+          </WhatsAppLink>
         </div>
       )}
     </nav>
