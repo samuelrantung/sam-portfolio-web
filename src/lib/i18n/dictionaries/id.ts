@@ -6,7 +6,7 @@ export const id = {
     portfolio: "Portofolio",
     about: "Tentang",
     contact: "Kontak",
-    aboutSamuel: "Tentang Samuel",
+    aboutSamuel: "Tentang Founder",
   },
   cta: {
     whatsappLabel: "Konsultasi via WhatsApp",
@@ -16,8 +16,8 @@ export const id = {
   },
   home: {
     hero: {
-      titleLead: "Bisnis Anda Layak",
-      titleHighlight: "Ditemukan",
+      titleLead: "Your Localized",
+      titleHighlight: "Digital Partner",
       subtitle:
         "Partner digital pilihan untuk bisnis di Sulawesi Utara - dari website professional, hingga aplikasi dan sistem custom untuk digitalisasi bisnis anda.",
       trust: {
@@ -27,7 +27,7 @@ export const id = {
       },
     },
     pain: {
-      heading: "Having this trouble?",
+      heading: "Punya masalah ini?",
       beforeLabel: "PROBLEM",
       afterLabel: "WITH US",
       items: {
@@ -46,7 +46,7 @@ export const id = {
       },
     },
     services: {
-      heading: "Our Services",
+      heading: "Layanan Kami",
       subheading: "Mulai dengan apa yang paling dibutuhkan bisnis anda.",
       cardCta: "View more",
       items: {
@@ -66,8 +66,9 @@ export const id = {
           price: "Diskusikan sesuai kebutuhan",
         },
         maintenance: {
-          title: "Perawatan & Pengembangan",
-          outcome: "Buat website dan aplikasi anda selalu aman, cepat, dan tetap berkembang dengan bisnis anda.",
+          title: "Pembaharuan Sistem",
+          outcome: "Perbaharui sistem anda dengan teknologi terbaru.",
+          // outcome: "Buat website dan aplikasi anda selalu aman, cepat, dan tetap berkembang dengan bisnis anda.",
           price: "Diskusikan sesuai kebutuhan",
         },
       },
@@ -103,7 +104,7 @@ export const id = {
       steps: {
         consult: {
           title: "Constulation",
-          desc: "Ceritakan kebutuhan bisnis anda, hubungi lewat WhatsApp atau ketemu langsung. Kami bantu memberikan solusi dan estimasinya tanpa biaya.",
+          desc: "Ceritakan kebutuhan bisnis anda, hubungi lewat WhatsApp atau ketemuan langsung. Kami bantu memberikan solusi dan estimasinya tanpa biaya.",
         },
         build: {
           title: "Design & Development",
@@ -177,15 +178,17 @@ export const id = {
           "Tampilan cepat dan rapi di HP maupun laptop",
           "Domain, hosting, dan setup teknis kami tangani",
         ],
-        price: "Landing page mulai dari Rp 3 juta · company website mulai dari Rp 5 juta",
+        price: "Landing page mulai dari Rp 3 juta",
         priceNote:
           "Harga akhir tergantung jumlah halaman dan fitur — kami beri rincian jelas sebelum mulai.",
         proof: {
           label: "Sudah terbukti",
-          title: "PT Seraya Bahari Agensi — Bitung",
+          title: "PT Seraya Bahari Agensi - Bitung",
           text:
-            "Kami membangun landing page Seraya Bahari dari nol. Hasilnya: customer baru menghubungi mereka setelah menemukan kontaknya lewat website, dan nilai project-nya kembali dari revenue customer tersebut.",
+            "Dengan kehadiran website yang kami kembangkan, seorang klien international berhasil menjangkau mereka melalui informasi kontak yang tertera di website yang kami buat. Nilai transaksi yang ada telah menjadi bukti nyata akan investasi yang menaikkan revenue dari perusahaan.",
+
           linkLabel: "Lihat websitenya",
+
         },
         faq: [
           {

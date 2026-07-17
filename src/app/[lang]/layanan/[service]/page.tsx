@@ -1,5 +1,6 @@
 // src/app/layanan/[service]/page.tsx
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
@@ -24,21 +25,29 @@ const serviceConfig = {
     Icon: Globe,
     proofHref: "https://seraya-agency.com/",
     proofExternal: true,
+    proofImage: "/portfolio/seraya/seraya-hero-section.png",
+    proofImageAspect: "aspect-[3438/1616]",
   },
   aplikasi: {
     Icon: Smartphone,
     proofHref: "/tentang/samuel",
     proofExternal: false,
+    proofImage: undefined,
+    proofImageAspect: undefined,
   },
   digitalisasi: {
     Icon: Workflow,
     proofHref: "/tentang/samuel",
     proofExternal: false,
+    proofImage: undefined,
+    proofImageAspect: undefined,
   },
   maintenance: {
     Icon: ShieldCheck,
     proofHref: "/tentang/samuel",
     proofExternal: false,
+    proofImage: undefined,
+    proofImageAspect: undefined,
   },
 } as const;
 
@@ -157,34 +166,61 @@ export default async function ServicePage(
 
       {/* 5. Proof */}
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="reveal-on-scroll bg-card border border-border/40 rounded-2xl p-8">
-          <p className="text-xs font-semibold uppercase tracking-wide text-primary mb-2">
-            {item.proof.label}
-          </p>
-          <h2 className="text-xl font-bold font-display text-foreground mb-3">
-            {item.proof.title}
-          </h2>
-          <p className="text-sm text-foreground/90 leading-relaxed mb-4">
-            {item.proof.text}
-          </p>
-          {config.proofExternal ? (
-            <a
-              href={config.proofHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:text-primary/80 transition-colors"
-            >
-              {item.proof.linkLabel}
-              <ExternalLink className="w-3.5 h-3.5" />
-            </a>
-          ) : (
-            <Link
-              href={localePath(lang, config.proofHref)}
-              className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:text-primary/80 transition-colors"
-            >
-              {item.proof.linkLabel}
-              <ArrowRight className="w-4 h-4" />
-            </Link>
+        <div className={`reveal-on-scroll bg-card border border-border/40 rounded-3xl p-6 sm:p-8 md:p-10 ${config.proofImage ? "grid grid-cols-1 md:grid-cols-12 gap-8 items-center" : ""}`}>
+          <div className={`${config.proofImage ? "md:col-span-7" : ""} space-y-4`}>
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-wide text-primary mb-2">
+                {item.proof.label}
+              </p>
+              <h2 className="text-xl font-bold font-display text-foreground mb-3 leading-tight">
+                {item.proof.title}
+              </h2>
+              <p className="text-sm text-foreground/90 leading-relaxed">
+                {item.proof.text}
+              </p>
+            </div>
+            
+            <div className="pt-2">
+              {config.proofExternal ? (
+                <a
+                  href={config.proofHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2.5 text-sm font-semibold text-primary hover:text-primary/80 transition-colors group/btn"
+                >
+                  {item.proof.linkLabel}
+                  <span className="w-7 h-7 rounded-full bg-primary/10 flex items-center justify-center transition-all duration-300 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-0.5 group-hover/btn:bg-primary/20">
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </span>
+                </a>
+              ) : (
+                <Link
+                  href={localePath(lang, config.proofHref)}
+                  className="inline-flex items-center gap-2.5 text-sm font-semibold text-primary hover:text-primary/80 transition-colors group/btn"
+                >
+                  {item.proof.linkLabel}
+                  <span className="w-7 h-7 rounded-full bg-primary/10 flex items-center justify-center transition-all duration-300 group-hover/btn:translate-x-1 group-hover/btn:bg-primary/20">
+                    <ArrowRight className="w-4 h-4" />
+                  </span>
+                </Link>
+              )}
+            </div>
+          </div>
+
+          {config.proofImage && (
+            <div className="md:col-span-5">
+              <div className="rounded-[1.5rem] border border-border/30 bg-muted/20 p-1.5 shadow-inner">
+                <div className={`rounded-[calc(1.5rem-0.375rem)] overflow-hidden relative w-full border border-border/40 bg-muted ${config.proofImageAspect ?? "aspect-[16/10]"}`}>
+                  <Image
+                    src={config.proofImage}
+                    alt={item.proof.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 40vw, 30vw"
+                    className="object-cover"
+                  />
+                </div>
+              </div>
+            </div>
           )}
         </div>
       </section>

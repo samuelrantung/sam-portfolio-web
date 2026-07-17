@@ -98,9 +98,12 @@ body {
 
 /* Float Animations for Illustrations Collage */
 @keyframes float {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-10px);
   }
@@ -120,4 +123,244 @@ body {
 
 .animate-float-4 {
   animation: float 9s ease-in-out infinite 3s;
+}
+
+/* ============================================
+   Hero Aurora Backdrop (v2)
+   ============================================ */
+
+@keyframes aurora-1 {
+  0% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
+
+  50% {
+    transform: translate(80px, -50px) scale(1.2) rotate(120deg);
+  }
+
+  100% {
+    transform: translate(-40px, 60px) scale(0.9) rotate(360deg);
+  }
+}
+
+@keyframes aurora-2 {
+  0% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
+
+  50% {
+    transform: translate(-70px, 90px) scale(0.8) rotate(-180deg);
+  }
+
+  100% {
+    transform: translate(60px, -40px) scale(1.15) rotate(180deg);
+  }
+}
+
+@keyframes aurora-3 {
+  0% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
+
+  50% {
+    transform: translate(50px, -80px) scale(1.25) rotate(90deg);
+  }
+
+  100% {
+    transform: translate(-80px, 50px) scale(0.95) rotate(-90deg);
+  }
+}
+
+@keyframes aurora-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-aurora-1 {
+  animation: aurora-1 5s ease-in-out infinite alternate;
+}
+
+.animate-aurora-2 {
+  animation: aurora-2 5s ease-in-out infinite alternate;
+}
+
+.animate-aurora-3 {
+  animation: aurora-3 5s ease-in-out infinite alternate;
+}
+
+.animate-aurora-spin {
+  animation: aurora-spin 10s linear infinite;
+}
+
+/* Blob fills: saturated core fading to transparent.
+   Light mode ~40% core; dark mode ~25% core. */
+.aurora-blob-primary {
+  background: radial-gradient(circle at center,
+      color-mix(in srgb, var(--primary) 45%, transparent) 0%,
+      color-mix(in srgb, var(--primary) 22%, transparent) 45%,
+      transparent 72%);
+}
+
+.dark .aurora-blob-primary {
+  background: radial-gradient(circle at center,
+      color-mix(in srgb, var(--primary) 28%, transparent) 0%,
+      color-mix(in srgb, var(--primary) 14%, transparent) 45%,
+      transparent 72%);
+}
+
+.aurora-blob-accent {
+  background: radial-gradient(circle at center,
+      color-mix(in srgb, var(--accent) 42%, transparent) 0%,
+      color-mix(in srgb, var(--accent) 20%, transparent) 45%,
+      transparent 72%);
+}
+
+.dark .aurora-blob-accent {
+  background: radial-gradient(circle at center,
+      color-mix(in srgb, var(--accent) 26%, transparent) 0%,
+      color-mix(in srgb, var(--accent) 13%, transparent) 45%,
+      transparent 72%);
+}
+
+.aurora-blob-secondary {
+  background: radial-gradient(circle at center,
+      color-mix(in srgb, var(--secondary) 35%, transparent) 0%,
+      color-mix(in srgb, var(--secondary) 16%, transparent) 45%,
+      transparent 72%);
+}
+
+.dark .aurora-blob-secondary {
+  background: radial-gradient(circle at center,
+      color-mix(in srgb, var(--secondary) 22%, transparent) 0%,
+      color-mix(in srgb, var(--secondary) 10%, transparent) 45%,
+      transparent 72%);
+}
+
+/* Rotating conic ribbon — the visible "aurora" band */
+.aurora-ribbon {
+  background: conic-gradient(from 0deg,
+      transparent 0deg,
+      color-mix(in srgb, var(--primary) 32%, transparent) 70deg,
+      color-mix(in srgb, var(--accent) 36%, transparent) 150deg,
+      color-mix(in srgb, var(--secondary) 24%, transparent) 210deg,
+      transparent 280deg);
+}
+
+.dark .aurora-ribbon {
+  background: conic-gradient(from 0deg,
+      transparent 0deg,
+      color-mix(in srgb, var(--primary) 22%, transparent) 70deg,
+      color-mix(in srgb, var(--accent) 24%, transparent) 150deg,
+      color-mix(in srgb, var(--secondary) 16%, transparent) 210deg,
+      transparent 280deg);
+}
+
+/* Faint dot grid, visible near center, fading out at edges */
+.hero-dot-grid {
+  background-image: radial-gradient(color-mix(in srgb, var(--foreground) 20%, transparent) 1px,
+      transparent 1px);
+  background-size: 26px 26px;
+  -webkit-mask-image: radial-gradient(ellipse 75% 65% at 50% 45%,
+      black 0%,
+      transparent 100%);
+  mask-image: radial-gradient(ellipse 75% 65% at 50% 45%,
+      black 0%,
+      transparent 100%);
+}
+
+/* Readability scrim behind the copy column */
+.hero-copy-scrim {
+  background: linear-gradient(90deg,
+      color-mix(in srgb, var(--background) 78%, transparent) 0%,
+      color-mix(in srgb, var(--background) 50%, transparent) 55%,
+      transparent 100%);
+}
+
+/* Edge fade so the hero blends into the page below */
+.hero-vignette {
+  background: radial-gradient(ellipse 90% 80% at 50% 45%,
+      transparent 55%,
+      var(--background) 100%);
+}
+
+/* Floating icon chips */
+@keyframes float-chip {
+
+  0%,
+  100% {
+    transform: translateY(0) rotate(-2deg);
+  }
+
+  50% {
+    transform: translateY(-14px) rotate(3deg);
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    box-shadow: 0 0 0 0 var(--ring);
+  }
+
+  70% {
+    box-shadow: 0 0 0 16px transparent;
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 transparent;
+  }
+}
+
+.animate-chip-1 {
+  animation: float-chip 6s ease-in-out infinite;
+}
+
+.animate-chip-2 {
+  animation: float-chip 7.5s ease-in-out infinite 0.8s;
+}
+
+.animate-chip-3 {
+  animation: float-chip 6.8s ease-in-out infinite 1.6s;
+}
+
+.animate-chip-4 {
+  animation: float-chip 8.2s ease-in-out infinite 2.4s;
+}
+
+.animate-chip-5 {
+  animation: float-chip 7s ease-in-out infinite 3.2s;
+}
+
+.animate-chip-6 {
+  animation: float-chip 9s ease-in-out infinite 4s;
+}
+
+/* Focal chip: float + pulsing glow ring in one declaration
+   (two animation classes on one element would override each other) */
+.animate-chip-pulse {
+  animation:
+    float-chip 7.5s ease-in-out infinite 0.8s,
+    pulse-ring 3s ease-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .animate-aurora-1,
+  .animate-aurora-2,
+  .animate-aurora-3,
+  .animate-aurora-spin,
+  .animate-chip-1,
+  .animate-chip-2,
+  .animate-chip-3,
+  .animate-chip-4,
+  .animate-chip-5,
+  .animate-chip-6,
+  .animate-chip-pulse {
+    animation: none !important;
+    transform: none !important;
+  }
 }
