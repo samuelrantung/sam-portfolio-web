@@ -13,7 +13,9 @@ import {
   Server
 } from "lucide-react";
 import { Github, Linkedin, Instagram } from "@/components/BrandIcons";
-import { hasLocale, alternatesFor } from "@/lib/i18n";
+import { notFound } from "next/navigation";
+import { getDictionary, hasLocale, alternatesFor } from "@/lib/i18n";
+import { breadcrumbJsonLd, jsonLdScript } from "@/lib/schema";
 
 export async function generateMetadata(
   props: { params: Promise<{ lang: string }> }
@@ -28,7 +30,13 @@ export async function generateMetadata(
   };
 }
 
-export default function SamuelPortfolioPage() {
+export default async function SamuelPortfolioPage(
+  props: { params: Promise<{ lang: string }> }
+) {
+  const { lang } = await props.params;
+  if (!hasLocale(lang)) notFound();
+  const nav = getDictionary(lang).nav;
+
   const emailAddress = "samuelmrantung@gmail.com";
   const whatsappUrl = "https://wa.me/6282187792052";
   const githubUrl = "https://github.com/samuelrantung"; // Placeholder, user can update
@@ -37,6 +45,18 @@ export default function SamuelPortfolioPage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: jsonLdScript(
+            breadcrumbJsonLd(lang, [
+              { name: nav.home, path: "/" },
+              { name: nav.about, path: "/tentang" },
+              { name: nav.aboutSamuel, path: "/tentang/samuel" },
+            ])
+          ),
+        }}
+      />
       {/* Scroll Progress Bar */}
       <div className="scroll-progress" />
 

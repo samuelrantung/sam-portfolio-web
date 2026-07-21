@@ -15,7 +15,7 @@ import {
   MessageCircle,
 } from "lucide-react";
 import { getDictionary, hasLocale, localePath, alternatesFor } from "@/lib/i18n";
-import { serviceJsonLd, jsonLdScript } from "@/lib/schema";
+import { serviceJsonLd, breadcrumbJsonLd, faqPageJsonLd, jsonLdScript } from "@/lib/schema";
 import WhatsAppLink from "@/components/agency/WhatsAppLink";
 import FaqAccordion from "@/components/agency/home/FaqAccordion";
 import FinalCta from "@/components/agency/home/FinalCta";
@@ -91,8 +91,26 @@ export default async function ServicePage(
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: jsonLdScript(
-            serviceJsonLd(item.metaTitle, item.metaDescription, `/layanan/${service}`)
+            serviceJsonLd(lang, item.metaTitle, item.metaDescription, `/layanan/${service}`)
           ),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: jsonLdScript(
+            breadcrumbJsonLd(lang, [
+              { name: dict.nav.home, path: "/" },
+              { name: dict.nav.services, path: "/layanan" },
+              { name: item.h1, path: `/layanan/${service}` },
+            ])
+          ),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: jsonLdScript(faqPageJsonLd(item.faq)),
         }}
       />
       {/* 1. H1 + intro */}

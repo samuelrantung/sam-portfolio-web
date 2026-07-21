@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getDictionary, hasLocale, alternatesFor } from "@/lib/i18n";
+import { breadcrumbJsonLd, jsonLdScript } from "@/lib/schema";
 import ServicesGrid from "@/components/agency/home/ServicesGrid";
 import FinalCta from "@/components/agency/home/FinalCta";
 
@@ -24,6 +25,17 @@ export default async function LayananPage(props: { params: Promise<{ lang: strin
 
   return (
     <main className="flex-1 pt-16">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: jsonLdScript(
+            breadcrumbJsonLd(lang, [
+              { name: dict.nav.home, path: "/" },
+              { name: dict.nav.services, path: "/layanan" },
+            ])
+          ),
+        }}
+      />
       <section className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-4 text-center">
         <h1 className="text-4xl sm:text-5xl font-extrabold font-display tracking-tight text-foreground mb-4">
           {dict.layanan.overview.h1}

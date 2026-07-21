@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { UserRound, Sparkles, HeartHandshake, Compass, MapPin, ArrowRight } from "lucide-react";
 import { getDictionary, hasLocale, alternatesFor, localePath } from "@/lib/i18n";
+import { breadcrumbJsonLd, jsonLdScript } from "@/lib/schema";
 import FinalCta from "@/components/agency/home/FinalCta";
 
 const approachIcons = {
@@ -35,6 +36,17 @@ export default async function TentangPage(
 
   return (
     <main className="flex-1 pt-16">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: jsonLdScript(
+            breadcrumbJsonLd(lang, [
+              { name: dict.nav.home, path: "/" },
+              { name: dict.nav.about, path: "/tentang" },
+            ])
+          ),
+        }}
+      />
       <section className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-10 text-center">
         <h1 className="text-4xl sm:text-5xl font-extrabold font-display tracking-tight text-foreground mb-4">
           {t.h1}

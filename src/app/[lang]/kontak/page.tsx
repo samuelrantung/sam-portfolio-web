@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { MessageCircle, Mail, MapPin, ArrowRight } from "lucide-react";
 import { getDictionary, hasLocale, alternatesFor } from "@/lib/i18n";
+import { breadcrumbJsonLd, jsonLdScript } from "@/lib/schema";
 import { CONTACT_EMAIL } from "@/lib/site";
 import WhatsAppLink from "@/components/agency/WhatsAppLink";
 
@@ -29,6 +30,17 @@ export default async function KontakPage(
 
   return (
     <main className="flex-1 pt-16">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: jsonLdScript(
+            breadcrumbJsonLd(lang, [
+              { name: dict.nav.home, path: "/" },
+              { name: dict.nav.contact, path: "/kontak" },
+            ])
+          ),
+        }}
+      />
       <section className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-10 text-center">
         <h1 className="text-4xl sm:text-5xl font-extrabold font-display tracking-tight text-foreground mb-4">
           {k.h1}
