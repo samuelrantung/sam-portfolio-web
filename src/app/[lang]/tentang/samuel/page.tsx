@@ -13,12 +13,20 @@ import {
   Server
 } from "lucide-react";
 import { Github, Linkedin, Instagram } from "@/components/BrandIcons";
+import { hasLocale, alternatesFor } from "@/lib/i18n";
 
-export const metadata: Metadata = {
-  title: "Samuel Rantung | Full Stack & Frontend Developer",
-  description:
-    "Samuel Rantung, founder of Imaginnative — Full Stack & Frontend Developer specializing in React, Next.js, React Native, and Node.js.",
-};
+export async function generateMetadata(
+  props: { params: Promise<{ lang: string }> }
+): Promise<Metadata> {
+  const { lang } = await props.params;
+  if (!hasLocale(lang)) return {};
+  return {
+    title: "Samuel Rantung | Full Stack & Frontend Developer",
+    description:
+      "Samuel Rantung, founder of Imaginnative — Full Stack & Frontend Developer specializing in React, Next.js, React Native, and Node.js.",
+    alternates: alternatesFor(lang, "/tentang/samuel"),
+  };
+}
 
 export default function SamuelPortfolioPage() {
   const emailAddress = "samuelmrantung@gmail.com";

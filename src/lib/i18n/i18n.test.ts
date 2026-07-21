@@ -95,15 +95,29 @@ describe("toggleHref", () => {
 import { alternatesFor } from "./index";
 
 describe("alternatesFor", () => {
-  it("declares ID as canonical with EN alternate", () => {
-    expect(alternatesFor("/layanan/website")).toEqual({
+  const languages = {
+    id: "/layanan/website",
+    en: "/en/layanan/website",
+    "x-default": "/layanan/website",
+  };
+
+  it("gives the ID page a self-referential canonical", () => {
+    expect(alternatesFor("id", "/layanan/website")).toEqual({
       canonical: "/layanan/website",
-      languages: {
-        id: "/layanan/website",
-        en: "/en/layanan/website",
-        "x-default": "/layanan/website",
-      },
+      languages,
     });
+  });
+
+  it("gives the EN page a self-referential canonical, not the ID twin", () => {
+    expect(alternatesFor("en", "/layanan/website")).toEqual({
+      canonical: "/en/layanan/website",
+      languages,
+    });
+  });
+
+  it("keeps the home page canonical locale-correct", () => {
+    expect(alternatesFor("en", "/").canonical).toBe("/en");
+    expect(alternatesFor("id", "/").canonical).toBe("/");
   });
 });
 

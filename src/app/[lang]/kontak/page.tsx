@@ -15,7 +15,7 @@ export async function generateMetadata(
   return {
     title: k.metaTitle,
     description: k.metaDescription,
-    alternates: alternatesFor("/kontak"),
+    alternates: alternatesFor(lang, "/kontak"),
   };
 }
 

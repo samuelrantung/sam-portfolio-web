@@ -10,8 +10,12 @@ import ProcessSteps from "@/components/agency/home/ProcessSteps";
 import FaqAccordion from "@/components/agency/home/FaqAccordion";
 import FinalCta from "@/components/agency/home/FinalCta";
 
-export async function generateMetadata(): Promise<Metadata> {
-  return { alternates: alternatesFor("/") };
+export async function generateMetadata(
+  props: { params: Promise<{ lang: string }> }
+): Promise<Metadata> {
+  const { lang } = await props.params;
+  if (!hasLocale(lang)) return {};
+  return { alternates: alternatesFor(lang, "/") };
 }
 
 export default async function HomePage(props: { params: Promise<{ lang: string }> }) {

@@ -13,7 +13,7 @@ export async function generateMetadata(
   return {
     title: o.metaTitle,
     description: o.metaDescription,
-    alternates: alternatesFor("/layanan"),
+    alternates: alternatesFor(lang, "/layanan"),
   };
 }
 

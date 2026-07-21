@@ -41,7 +41,7 @@ export async function generateMetadata(
   return {
     title: p.metaTitle,
     description: p.metaDescription,
-    alternates: alternatesFor("/portofolio"),
+    alternates: alternatesFor(lang, "/portofolio"),
   };
 }
 

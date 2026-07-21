@@ -68,7 +68,7 @@ export async function generateMetadata(
   return {
     title: item.metaTitle,
     description: item.metaDescription,
-    alternates: alternatesFor(`/layanan/${service}`),
+    alternates: alternatesFor(lang, `/layanan/${service}`),
   };
 }
 

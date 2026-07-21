@@ -23,9 +23,12 @@ export function localePath(locale: Locale, path: string): string {
 export const hasLocale = (s: string): s is Locale =>
   (locales as readonly string[]).includes(s);
 
-export function alternatesFor(path: string) {
+// `path` is always the canonical Indonesian path (no locale prefix).
+// The canonical is self-referential per locale — an English page must point at
+// itself, not at its Indonesian twin, or Google drops it as a duplicate.
+export function alternatesFor(locale: Locale, path: string) {
   return {
-    canonical: path,
+    canonical: localePath(locale, path),
     languages: {
       id: path,
       en: localePath("en", path),
