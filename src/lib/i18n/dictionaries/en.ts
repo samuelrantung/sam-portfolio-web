@@ -358,6 +358,7 @@ export const en: Dictionary = {
       "We build systems that solve business problems, and websites are the way in. Every project here has a story: the problem, what we built, and the result.",
     roleLabel: "Our role",
     resultLabel: "Result",
+    demoLabel: "Demo",
     projects: {
       campaignBlast: {
         name: "WhatsApp Campaign System with Machine Learning",
@@ -386,6 +387,20 @@ export const en: Dictionary = {
         linkLabel: "Visit the website",
         imageAlt1: "Seraya Bahari Agensi website hero section",
         imageAlt2: "Seraya website appearing in Google search results",
+      },
+      pempek: {
+        name: "Pempek Bang Arie",
+        category: "Landing page · Internal demo",
+        role: "Full design & development: page structure, copywriting, and the WhatsApp ordering flow",
+        problem:
+          "Food businesses usually sell through Instagram and chat. The same questions about menus, pricing, and out-of-town shipping arrive every day, while orders come in as unstructured chat messages the owner must manually sort.",
+        solution:
+          "A multi-page site: an open menu with prices, a frozen-goods page with a cart, an outlet map, and the brand story. The cart assembles an order into a single WhatsApp message with items, quantities, and subtotals, so the owner only has to confirm shipping.",
+        result:
+          "Pempek Bang Arie is a fictional business, and we built this ourselves as a demo. It shows what a website for a food business actually looks like: how the menu, outlets, frozen shipping, and WhatsApp ordering work as one flow.",
+        linkLabel: "View the demo",
+        imageAlt1: "Pempek Bang Arie website homepage",
+        imageAlt2: "Pempek Bang Arie menu page with prices",
       },
       manadoPost: {
         name: "Manado Post",

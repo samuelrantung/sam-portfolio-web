@@ -359,6 +359,7 @@ export const id = {
       "Kami membangun sistem yang menyelesaikan masalah bisnis, dan website adalah pintu masuknya. Setiap project di sini punya cerita: masalah yang dihadapi, apa yang kami bangun, dan hasilnya.",
     roleLabel: "Peran kami",
     resultLabel: "Hasil",
+    demoLabel: "Demo",
     projects: {
       campaignBlast: {
         name: "Sistem WhatsApp Campaign dengan Machine Learning",
@@ -387,6 +388,20 @@ export const id = {
         linkLabel: "Kunjungi website",
         imageAlt1: "Hero section website Seraya Bahari Agensi",
         imageAlt2: "Website Seraya muncul di hasil pencarian Google",
+      },
+      pempek: {
+        name: "Pempek Bang Arie",
+        category: "Landing page · Demo internal",
+        role: "Desain dan pengembangan penuh: struktur halaman, copywriting, dan alur pemesanan lewat WhatsApp",
+        problem:
+          "Usaha kuliner umumnya berjualan lewat Instagram dan chat. Pertanyaan yang sama seperti menu, harga, atau pengiriman luar kota terus berulang setiap hari, dan pesanan masuk sebagai percakapan yang harus dirapikan sendiri oleh pemiliknya.",
+        solution:
+          "Kami bangun website multi-halaman: menu dengan harga terbuka, halaman frozen dengan keranjang pesanan, peta outlet, dan cerita brand. Keranjangnya menyusun pesanan menjadi satu pesan WhatsApp yang sudah lengkap dengan item, jumlah, dan subtotal, jadi pemilik tinggal mengonfirmasi ongkir.",
+        result:
+          "Pempek Bang Arie adalah bisnis fiktif, dan project ini kami bangun sendiri sebagai demo. Tujuannya menunjukkan wujud konkret website untuk usaha kuliner: bagaimana menu, outlet, pengiriman frozen, dan pemesanan lewat WhatsApp berjalan dalam satu alur.",
+        linkLabel: "Lihat demo",
+        imageAlt1: "Halaman utama website Pempek Bang Arie",
+        imageAlt2: "Halaman menu Pempek Bang Arie dengan daftar harga",
       },
       manadoPost: {
         name: "Manado Post",

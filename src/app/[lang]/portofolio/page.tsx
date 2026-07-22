@@ -8,11 +8,12 @@ import { breadcrumbJsonLd, jsonLdScript } from "@/lib/schema";
 import WhatsAppLink from "@/components/agency/WhatsAppLink";
 import FinalCta from "@/components/agency/home/FinalCta";
 
-// Non-translated project facts: images and external links.
+// Non-translated project facts: images, external links, and demo status.
 const projectConfig = {
   campaignBlast: {
     images: [] as string[],
     href: "https://github.com/samuelrantung/campaign-blast-poc",
+    isDemo: true,
   },
   seraya: {
     images: [
@@ -20,18 +21,29 @@ const projectConfig = {
       "/portfolio/seraya/seraya-google-indexed.png",
     ],
     href: "https://seraya-agency.com/",
+    isDemo: false,
+  },
+  pempek: {
+    images: [
+      "/portfolio/pempek/hero.png",
+      "/portfolio/pempek/menu.png",
+    ],
+    href: "https://preview-pempek.imaginnative.com/",
+    isDemo: true,
   },
   manadoPost: {
     images: ["/portfolio/manado-post/mp-app-carousel.png"],
     href: "https://play.google.com/store/apps/details?id=com.mp.manadopost&hl=id",
+    isDemo: false,
   },
   hospital: {
     images: [] as string[],
     href: "",
+    isDemo: false,
   },
 } as const;
 
-const projectOrder = ["campaignBlast", "hospital", "seraya", "manadoPost"] as const;
+const projectOrder = ["seraya", "pempek", "campaignBlast", "manadoPost", "hospital"] as const;
 
 export async function generateMetadata(
   props: { params: Promise<{ lang: string }> }
@@ -84,9 +96,16 @@ export default async function PortofolioPage(
               key={key}
               className="reveal-on-scroll rounded-2xl border border-border/40 bg-card p-8 md:p-10"
             >
-              <p className="text-xs font-semibold uppercase tracking-wide text-primary mb-2">
-                {project.category}
-              </p>
+              <div className="flex flex-wrap items-center gap-2 mb-2">
+                <p className="text-xs font-semibold uppercase tracking-wide text-primary">
+                  {project.category}
+                </p>
+                {config.isDemo && (
+                  <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-primary/10 text-primary">
+                    {p.demoLabel}
+                  </span>
+                )}
+              </div>
               <h2 className="text-2xl font-bold font-display text-foreground mb-1">
                 {project.name}
               </h2>
