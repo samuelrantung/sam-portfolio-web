@@ -3,9 +3,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
-import { Menu, X, MessageCircle } from "lucide-react";
-import ThemeToggle from "@/components/ThemeToggle";
+import { Menu, X } from "lucide-react";
 import LanguageToggle from "@/components/agency/LanguageToggle";
 import type { Dictionary, Locale } from "@/lib/i18n";
 import { localePath } from "@/lib/i18n";
@@ -21,7 +19,6 @@ export default function AgencyNavbar({
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { label: dict.nav.home, href: localePath(locale, "/") },
     { label: dict.nav.services, href: localePath(locale, "/layanan") },
     { label: dict.nav.portfolio, href: localePath(locale, "/portofolio") },
     { label: dict.nav.about, href: localePath(locale, "/tentang") },
@@ -29,84 +26,76 @@ export default function AgencyNavbar({
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border/40 transition-all duration-300 bg-card">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          <Link
-            href={localePath(locale, "/")}
-            className="flex items-center gap-2.5 font-display text-lg md:text-xl font-bold tracking-tight text-foreground hover:text-primary transition-colors"
-          >
-            <Image
-              src="/imaginnative-logo.png"
-              alt="imaginnative logo"
-              width={28}
-              height={28}
-              className="w-7 h-7 object-contain rounded"
-              priority
-            />
-            <span>imaginnative</span>
-          </Link>
+    <nav className="sticky top-0 z-50 bg-paper border-b border-line">
+      <div className="wrap nav-in">
+        <Link
+          href={localePath(locale, "/")}
+          className="logo hover:opacity-85 transition-opacity"
+        >
+          Imaginnative
+        </Link>
 
-          {/* Desktop nav */}
-          <div className="hidden md:flex items-center gap-6">
+        {/* Desktop nav */}
+        <div className="hidden md:flex items-center gap-7">
+          <div className="nav-links">
             {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="text-sm font-semibold text-muted hover:text-foreground transition-colors"
-              >
+              <Link key={item.href} href={item.href}>
                 {item.label}
               </Link>
             ))}
-            <WhatsAppLink
-              message={dict.cta.whatsappMessage}
-              source="navbar"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-primary text-primary-foreground hover:bg-primary/90 font-semibold text-sm transition-all duration-300"
-            >
-              <MessageCircle className="w-4 h-4" />
-              {dict.cta.whatsappLabel}
-            </WhatsAppLink>
-            <LanguageToggle locale={locale} />
-            <ThemeToggle />
           </div>
+          <WhatsAppLink
+            message={dict.cta.whatsappMessage}
+            source="navbar"
+            className="link-cta text-sm"
+          >
+            Konsultasi <span className="arw">&rarr;</span>
+          </WhatsAppLink>
+          <LanguageToggle locale={locale} />
+        </div>
 
-          {/* Mobile controls */}
-          <div className="md:hidden flex items-center gap-2">
-            <LanguageToggle locale={locale} />
-            <ThemeToggle />
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="p-2 rounded-lg text-muted hover:text-foreground hover:bg-card/50 transition-colors focus:outline-none flex items-center justify-center"
-              aria-label="Toggle Navigation Menu"
-            >
-              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
-          </div>
+        {/* Mobile controls */}
+        <div className="md:hidden flex items-center gap-3">
+          <WhatsAppLink
+            message={dict.cta.whatsappMessage}
+            source="navbar_mobile"
+            className="pill py-2 px-4 text-xs font-medium"
+          >
+            Konsultasi
+          </WhatsAppLink>
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="p-2 text-ink hover:opacity-75 transition-opacity focus:outline-none"
+            aria-label="Toggle Navigation Menu"
+          >
+            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
         </div>
       </div>
 
       {/* Mobile overlay */}
       {isOpen && (
-        <div className="md:hidden px-4 pt-2 pb-6 space-y-1 bg-background/95 backdrop-blur-md border-b border-border/60">
+        <div className="md:hidden px-6 pt-2 pb-6 space-y-3 bg-paper border-b border-line">
+          <Link
+            href={localePath(locale, "/")}
+            onClick={() => setIsOpen(false)}
+            className="block py-2 text-base font-semibold text-ink border-b border-line"
+          >
+            {dict.nav.home}
+          </Link>
           {navItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
               onClick={() => setIsOpen(false)}
-              className="block px-3 py-2.5 rounded-lg text-base font-semibold text-muted hover:text-foreground hover:bg-card/50 transition-colors"
+              className="block py-2 text-base font-medium text-gray-1 hover:text-ink transition-colors"
             >
               {item.label}
             </Link>
           ))}
-          <WhatsAppLink
-            message={dict.cta.whatsappMessage}
-            source="navbar_mobile"
-            onClick={() => setIsOpen(false)}
-            className="mt-2 inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-primary text-primary-foreground font-semibold text-base"
-          >
-            <MessageCircle className="w-4 h-4" />
-            {dict.cta.whatsappLabel}
-          </WhatsAppLink>
+          <div className="pt-3 border-t border-line">
+            <LanguageToggle locale={locale} />
+          </div>
         </div>
       )}
     </nav>

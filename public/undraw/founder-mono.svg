@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" role="img" aria-label="Software Developer Studio">
+  <g transform="translate(0, 0)">
+    <!-- Workspace Desk Base -->
+    <path d="M 120 480 L 680 480 M 160 480 L 160 540 M 640 480 L 640 540" stroke="#333333" stroke-width="4" stroke-linecap="round"/>
+    
+    <!-- Monitor / IDE Screen -->
+    <rect x="220" y="160" width="360" height="240" rx="8" fill="#131313" stroke="#e6e6e6" stroke-width="3"/>
+    <rect x="230" y="170" width="340" height="22" rx="4" fill="#333333"/>
+    <circle cx="245" cy="181" r="4" fill="#9b9b9b"/>
+    <circle cx="260" cy="181" r="4" fill="#9b9b9b"/>
+    <circle cx="275" cy="181" r="4" fill="#9b9b9b"/>
+    
+    <!-- Code Lines on Monitor -->
+    <rect x="250" y="210" width="120" height="10" rx="3" fill="#ffffff"/>
+    <rect x="250" y="232" width="180" height="8" rx="3" fill="#9b9b9b"/>
+    <rect x="270" y="248" width="140" height="8" rx="3" fill="#666666"/>
+    <rect x="270" y="264" width="210" height="8" rx="3" fill="#9b9b9b"/>
+    <rect x="290" y="280" width="90" height="8" rx="3" fill="#ffffff"/>
+    <rect x="250" y="304" width="160" height="10" rx="3" fill="#ffffff"/>
+    <rect x="270" y="322" width="220" height="8" rx="3" fill="#9b9b9b"/>
+    <rect x="250" y="344" width="100" height="8" rx="3" fill="#666666"/>
+
+    <!-- Monitor Stand -->
+    <rect x="380" y="400" width="40" height="60" fill="#333333"/>
+    <path d="M 340 460 L 460 460" stroke="#e6e6e6" stroke-width="4" stroke-linecap="round"/>
+
+    <!-- Keyboard & Mouse -->
+    <rect x="310" y="468" width="140" height="10" rx="4" fill="#9b9b9b"/>
+    <ellipse cx="490" cy="473" rx="10" ry="6" fill="#9b9b9b"/>
+
+    <!-- Floating Code / Tech Accent Elements (Monochrome) -->
+    <g transform="translate(140, 200)">
+      <rect x="0" y="0" width="56" height="56" rx="12" fill="#131313" stroke="#e6e6e6" stroke-width="2"/>
+      <path d="M 18 28 L 26 20 M 18 28 L 26 36 M 38 28 L 30 20 M 38 28 L 30 36" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+
+    <g transform="translate(600, 240)">
+      <rect x="0" y="0" width="56" height="56" rx="12" fill="#131313" stroke="#e6e6e6" stroke-width="2"/>
+      <path d="M 20 20 L 36 20 L 36 36 L 20 36 Z M 28 16 L 28 20 M 28 36 L 28 40 M 16 28 L 20 28 M 36 28 L 40 28" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+    </g>
+
+    <!-- Subtle Ground Reflection Rule -->
+    <line x1="200" y1="520" x2="600" y2="520" stroke="#333333" stroke-width="1" stroke-dasharray="8 6"/>
+  </g>
+</svg>

@@ -14,7 +14,7 @@ export default function LanguageToggle({ locale }: { locale: Locale }) {
   return (
     <Link
       href={target}
-      className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border border-border/40 text-xs font-bold text-muted hover:text-foreground hover:border-primary/40 transition-colors"
+      className="tag py-1 px-3 text-xs inline-flex items-center gap-1.5"
       aria-label={locale === "id" ? "Switch to English" : "Ganti ke Bahasa Indonesia"}
     >
       <Languages className="w-3.5 h-3.5" />

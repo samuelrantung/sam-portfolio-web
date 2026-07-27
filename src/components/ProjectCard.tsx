@@ -58,85 +58,64 @@ const projects: Project[] = [
 
 export default function ProjectList() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div className="space-y-6">
       {projects.map((project) => {
         return (
           <div
             key={project.title}
-            className="flex flex-col rounded-2xl border border-border/40 bg-card/20 hover:bg-card/50 hover:border-primary/30 transition-all duration-300 group hover:shadow-lg relative overflow-hidden reveal-on-scroll"
+            className="py-6 border-t border-line reveal-on-scroll"
           >
-            {/* Top decorative gradient line */}
-            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary/50 to-secondary/50" />
-
-            {/* Content Container */}
-            <div className="p-6 flex-1 flex flex-col justify-between">
-              <div>
-                {/* Header Icon & Date */}
-                <div className="flex items-center justify-between mb-4">
-                  <div className="p-2.5 rounded-xl bg-primary/10 text-primary border border-primary/20">
-                    {project.iconType === "ml" && <Sparkles className="w-5 h-5" />}
-                    {project.iconType === "web" && <Users className="w-5 h-5" />}
-                    {project.iconType === "mobile" && <Smartphone className="w-5 h-5" />}
-                  </div>
-                  <span className="text-xs font-semibold text-muted">{project.period}</span>
-                </div>
-
-                {/* Title */}
-                <h3 className="text-lg font-bold font-display text-foreground leading-snug mb-2 group-hover:text-primary transition-colors">
+            <div className="flex items-center justify-between mb-3">
+              <div className="flex items-center gap-2">
+                {project.iconType === "ml" && <Sparkles className="w-5 h-5 text-ink" />}
+                {project.iconType === "web" && <Users className="w-5 h-5 text-ink" />}
+                {project.iconType === "mobile" && <Smartphone className="w-5 h-5 text-ink" />}
+                <h3 className="fk text-xl font-semibold text-ink">
                   {project.title}
                 </h3>
-
-                {/* Description */}
-                <p className="text-sm text-muted leading-relaxed mb-4">
-                  {project.description}
-                </p>
-
-                {/* Achievements/Bullet Highlights */}
-                <ul className="mb-6 space-y-1.5 text-xs text-muted/90 pl-3 list-disc marker:text-primary">
-                  {project.highlights.map((highlight, idx) => (
-                    <li key={idx} className="leading-normal">
-                      {highlight}
-                    </li>
-                  ))}
-                </ul>
               </div>
+              <span className="idx">{project.period}</span>
+            </div>
 
-              {/* Technologies & Footer Actions */}
-              <div>
-                <div className="flex flex-wrap gap-1 mb-6">
-                  {project.tech.map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-2 py-0.5 rounded bg-background border border-border/50 text-[10px] font-medium text-foreground/80"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
+            <p className="muted text-base mb-4 leading-relaxed max-w-[65ch]">
+              {project.description}
+            </p>
 
-                <div className="flex items-center gap-3 pt-4 border-t border-border/40 text-xs">
-                  {project.githubUrl && (
-                    <a
-                      href={project.githubUrl}
-                      className="flex items-center gap-1.5 font-semibold text-muted hover:text-foreground transition-colors cursor-pointer"
-                      aria-label={`View code for ${project.title}`}
-                    >
-                      <Github className="w-4 h-4" />
-                      <span>Source</span>
-                    </a>
-                  )}
-                  {project.demoUrl && (
-                    <a
-                      href={project.demoUrl}
-                      className="flex items-center gap-1.5 font-semibold text-primary hover:text-secondary transition-colors cursor-pointer"
-                      aria-label={`View demo for ${project.title}`}
-                    >
-                      <ExternalLink className="w-4 h-4" />
-                      <span>Live Demo</span>
-                    </a>
-                  )}
-                </div>
-              </div>
+            <ul className="mb-4 space-y-1.5 text-sm text-gray-1 pl-4 list-disc marker:text-ink">
+              {project.highlights.map((highlight, idx) => (
+                <li key={idx} className="leading-relaxed">
+                  {highlight}
+                </li>
+              ))}
+            </ul>
+
+            <div className="flex flex-wrap gap-1.5 mb-4">
+              {project.tech.map((tag) => (
+                <span key={tag} className="tag text-xs py-0.5 px-2">
+                  {tag}
+                </span>
+              ))}
+            </div>
+
+            <div className="flex items-center gap-4 pt-2 text-sm">
+              {project.githubUrl && (
+                <a
+                  href={project.githubUrl}
+                  className="link-cta"
+                  aria-label={`View code for ${project.title}`}
+                >
+                  <Github className="w-4 h-4 inline mr-1" /> Source <span className="arw">&rarr;</span>
+                </a>
+              )}
+              {project.demoUrl && (
+                <a
+                  href={project.demoUrl}
+                  className="link-cta"
+                  aria-label={`View demo for ${project.title}`}
+                >
+                  <ExternalLink className="w-4 h-4 inline mr-1" /> Live Demo <span className="arw">&rarr;</span>
+                </a>
+              )}
             </div>
           </div>
         );

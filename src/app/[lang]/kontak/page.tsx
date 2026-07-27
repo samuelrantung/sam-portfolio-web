@@ -1,7 +1,7 @@
 // src/app/[lang]/kontak/page.tsx
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { MessageCircle, Mail, MapPin, ArrowRight } from "lucide-react";
+import { MessageCircle, Mail, MapPin } from "lucide-react";
 import { getDictionary, hasLocale, alternatesFor } from "@/lib/i18n";
 import { breadcrumbJsonLd, jsonLdScript } from "@/lib/schema";
 import { CONTACT_EMAIL } from "@/lib/site";
@@ -29,7 +29,7 @@ export default async function KontakPage(
   const k = dict.kontak;
 
   return (
-    <main className="flex-1 pt-16">
+    <main className="flex-1">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -41,68 +41,84 @@ export default async function KontakPage(
           ),
         }}
       />
-      <section className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-10 text-center">
-        <h1 className="text-4xl sm:text-5xl font-extrabold font-display tracking-tight text-foreground mb-4">
-          {k.h1}
-        </h1>
-        <p className="text-lg text-muted leading-relaxed">{k.intro}</p>
+      {/* Header */}
+      <section className="sec" style={{ borderTop: 0 }}>
+        <div className="wrap">
+          <span className="idx">Kontak</span>
+          <h1
+            className="fk"
+            style={{
+              fontSize: "clamp(2.4rem, 5vw, 3.6rem)",
+              marginTop: "10px",
+              maxWidth: "16ch",
+            }}
+          >
+            {k.h1}
+          </h1>
+          <p
+            className="muted"
+            style={{ maxWidth: "52ch", marginTop: "14px", fontSize: "1.14rem" }}
+          >
+            {k.intro}
+          </p>
+        </div>
       </section>
 
-      <section className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-8 pb-24 space-y-6">
-        {/* WhatsApp — primary */}
-        <WhatsAppLink
-          message={dict.cta.whatsappMessage}
-          source="kontak"
-          className="reveal-on-scroll group block rounded-2xl border-2 border-primary/40 bg-primary/5 p-8 transition-all duration-300 hover:border-primary hover:shadow-lg"
-        >
-          <div className="flex items-start gap-4">
-            <div className="w-12 h-12 rounded-2xl bg-primary text-primary-foreground flex items-center justify-center shrink-0">
-              <MessageCircle className="w-6 h-6" />
+      {/* Contact Rows */}
+      <section className="sec">
+        <div className="wrap">
+          <div className="row-list">
+            {/* WhatsApp */}
+            <div className="row-item reveal-on-scroll">
+              <MessageCircle className="w-5 h-5 text-ink shrink-0 mt-1" />
+              <div>
+                <h2 className="fk text-xl font-semibold mb-1">
+                  {k.whatsapp.title}
+                </h2>
+                <p className="muted text-base leading-relaxed mb-4 max-w-[50ch]">
+                  {k.whatsapp.text}
+                </p>
+                <WhatsAppLink
+                  message={dict.cta.whatsappMessage}
+                  source="kontak"
+                  className="pill inline-block"
+                >
+                  {dict.cta.whatsappLabel}
+                </WhatsAppLink>
+                <span className="hand muted ml-4 inline-block">{dict.cta.whatsappNote}</span>
+              </div>
             </div>
-            <div className="flex-1">
-              <h2 className="text-lg font-bold font-display text-foreground mb-1">
-                {k.whatsapp.title}
-              </h2>
-              <p className="text-sm text-muted leading-relaxed mb-3">{k.whatsapp.text}</p>
-              <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary">
-                {dict.cta.whatsappLabel}
-                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-              </span>
-              <p className="text-xs text-muted mt-1">{dict.cta.whatsappNote}</p>
-            </div>
-          </div>
-        </WhatsAppLink>
 
-        {/* Email */}
-        <a
-          href={`mailto:${CONTACT_EMAIL}`}
-          className="reveal-on-scroll block rounded-2xl border border-border/40 bg-card p-8 transition-all duration-300 hover:border-primary/40"
-        >
-          <div className="flex items-start gap-4">
-            <div className="w-12 h-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center shrink-0">
-              <Mail className="w-6 h-6" />
+            {/* Email */}
+            <div className="row-item reveal-on-scroll">
+              <Mail className="w-5 h-5 text-ink shrink-0 mt-1" />
+              <div>
+                <h2 className="fk text-xl font-semibold mb-1">
+                  {k.email.title}
+                </h2>
+                <p className="muted text-base leading-relaxed mb-3 max-w-[50ch]">
+                  {k.email.text}
+                </p>
+                <a
+                  href={`mailto:${CONTACT_EMAIL}`}
+                  className="link-cta"
+                >
+                  {CONTACT_EMAIL} <span className="arw">&rarr;</span>
+                </a>
+              </div>
             </div>
-            <div>
-              <h2 className="text-lg font-bold font-display text-foreground mb-1">
-                {k.email.title}
-              </h2>
-              <p className="text-sm text-muted leading-relaxed mb-2">{k.email.text}</p>
-              <span className="text-sm font-semibold text-primary">{CONTACT_EMAIL}</span>
-            </div>
-          </div>
-        </a>
 
-        {/* Location — informational, no map yet (GBP comes with Sprint 6) */}
-        <div className="reveal-on-scroll rounded-2xl border border-border/40 bg-card p-8">
-          <div className="flex items-start gap-4">
-            <div className="w-12 h-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center shrink-0">
-              <MapPin className="w-6 h-6" />
-            </div>
-            <div>
-              <h2 className="text-lg font-bold font-display text-foreground mb-1">
-                {k.location.title}
-              </h2>
-              <p className="text-sm text-muted leading-relaxed">{k.location.text}</p>
+            {/* Location */}
+            <div className="row-item reveal-on-scroll">
+              <MapPin className="w-5 h-5 text-ink shrink-0 mt-1" />
+              <div>
+                <h2 className="fk text-xl font-semibold mb-1">
+                  {k.location.title}
+                </h2>
+                <p className="muted text-base leading-relaxed max-w-[50ch]">
+                  {k.location.text}
+                </p>
+              </div>
             </div>
           </div>
         </div>

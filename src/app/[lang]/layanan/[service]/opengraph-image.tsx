@@ -31,12 +31,13 @@ export default async function Image({
           flexDirection: "column",
           justifyContent: "center",
           padding: "80px",
-          background: "#222831",
-          color: "#EEEEEE",
+          background: "#ffffff",
+          color: "#131313",
+          borderBottom: "12px solid #131313",
         }}
       >
         <div style={{ fontSize: 44, fontWeight: 700, display: "flex" }}>
-          imagi<span style={{ color: "#FBD46D" }}>nn</span>ative
+          imaginnative
         </div>
         <div
           style={{
@@ -49,7 +50,14 @@ export default async function Image({
         >
           {title}
         </div>
-        <div style={{ fontSize: 28, marginTop: 24, color: "#4F8A8B", display: "flex" }}>
+        <div
+          style={{
+            fontSize: 28,
+            marginTop: 24,
+            color: "rgba(19, 19, 19, 0.6)",
+            display: "flex",
+          }}
+        >
           imaginnative.com
         </div>
       </div>

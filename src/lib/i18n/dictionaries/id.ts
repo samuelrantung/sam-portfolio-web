@@ -62,7 +62,7 @@ export const id = {
         },
         digitalisasi: {
           title: "Digitalisasi Operasional",
-          outcome: "Point of Sales, WhatsApp Business, sampai pembayaran online — operasional yang lebih rapi.",
+          outcome: "Point of Sales, WhatsApp Business, sampai pembayaran online, operasional yang lebih rapi.",
           price: "Diskusikan sesuai kebutuhan",
         },
         maintenance: {
@@ -103,7 +103,7 @@ export const id = {
       heading: "Cara kerja kami",
       steps: {
         consult: {
-          title: "Constulation",
+          title: "Konsultasi",
           desc: "Ceritakan kebutuhan bisnis anda, hubungi lewat WhatsApp atau ketemuan langsung. Kami bantu memberikan solusi dan estimasinya tanpa biaya.",
         },
         build: {
@@ -149,7 +149,7 @@ export const id = {
         "Jasa pembuatan website, aplikasi custom, digitalisasi operasional, dan perawatan website untuk bisnis di Manado, Bitung, dan seluruh Sulawesi Utara.",
       h1: "Layanan kami",
       intro:
-        "Dari website pertama sampai sistem custom — pilih layanan yang paling bisnis Anda butuhkan sekarang. Belum yakin mulai dari mana? Ceritakan saja kebutuhan Anda via WhatsApp.",
+        "Dari website pertama sampai sistem custom, pilih layanan yang paling bisnis Anda butuhkan sekarang. Belum yakin mulai dari mana? Ceritakan saja kebutuhan Anda via WhatsApp.",
     },
     sections: {
       audiences: "Untuk siapa layanan ini",
@@ -161,10 +161,10 @@ export const id = {
       website: {
         metaTitle: "Jasa Pembuatan Website Manado & Sulawesi Utara",
         metaDescription:
-          "Jasa pembuatan website dan landing page profesional untuk bisnis di Manado dan Sulawesi Utara. Landing page mulai Rp 3 juta, company website mulai Rp 5 juta.",
+          "Jasa pembuatan website dan landing page profesional untuk bisnis di Manado dan Sulawesi Utara. Landing page mulai Rp 3 juta.",
         h1: "Jasa Pembuatan Website untuk Bisnis di Sulawesi Utara",
         intro:
-          "Website yang membuat bisnis Anda ditemukan di Google, dipercaya calon customer, dan mudah dihubungi lewat WhatsApp — bukan sekadar pajangan online.",
+          "Website yang membuat bisnis Anda ditemukan di Google, dipercaya calon customer, dan mudah dihubungi lewat WhatsApp, bukan sekadar pajangan online.",
         audiences: [
           "Resort, penginapan, dan usaha wisata yang ingin ditemukan tamu",
           "Restoran, kafe, dan UMKM kuliner",
@@ -180,7 +180,7 @@ export const id = {
         ],
         price: "Landing page mulai dari Rp 3 juta",
         priceNote:
-          "Harga akhir tergantung jumlah halaman dan fitur — kami beri rincian jelas sebelum mulai.",
+          "Harga akhir tergantung jumlah halaman dan fitur, kami beri rincian jelas sebelum mulai.",
         proof: {
           label: "Sudah terbukti",
           title: "PT Seraya Bahari Agensi - Bitung",
@@ -193,27 +193,27 @@ export const id = {
         faq: [
           {
             q: "Apa bedanya landing page dan company website?",
-            a: "Landing page adalah satu halaman fokus untuk memperkenalkan bisnis dan mengarahkan ke WhatsApp — cocok sebagai langkah pertama. Company website punya beberapa halaman (profil, layanan, galeri, kontak) untuk bisnis yang butuh kehadiran lebih lengkap.",
+            a: "Landing page adalah satu halaman fokus untuk memperkenalkan bisnis dan mengarahkan ke WhatsApp, cocok sebagai langkah pertama. Company website punya beberapa halaman (profil, layanan, galeri, kontak) untuk bisnis yang butuh kehadiran lebih lengkap.",
           },
           {
             q: "Apakah saya perlu menyiapkan materi sendiri?",
-            a: "Cukup foto dan informasi dasar bisnis Anda. Struktur, copywriting, dan desain kami yang kerjakan — lalu Anda review sebelum tayang.",
+            a: "Cukup foto dan informasi dasar bisnis Anda. Struktur, copywriting, dan desain kami yang kerjakan, lalu Anda review sebelum tayang.",
           },
           {
             q: "Apakah website saya bisa muncul di Google?",
-            a: "Ya — setiap website kami bangun dengan optimasi SEO lokal: kata kunci yang dicari orang di daerah Anda, kecepatan loading, dan struktur yang disukai Google.",
+            a: "Ya, setiap website kami bangun dengan optimasi SEO lokal: kata kunci yang dicari orang di daerah Anda, kecepatan loading, dan struktur yang disukai Google.",
           },
         ],
         whatsappMessage:
           "Halo Imaginnative, saya tertarik dengan jasa pembuatan website untuk bisnis saya.",
       },
       aplikasi: {
-        metaTitle: "Jasa Pembuatan Aplikasi Web & Mobile — Sulawesi Utara",
+        metaTitle: "Jasa Pembuatan Aplikasi Web & Mobile, Sulawesi Utara",
         metaDescription:
-          "Pembuatan aplikasi web dan mobile custom untuk bisnis di Sulawesi Utara — sistem booking, dashboard internal, sampai produk SaaS. Dibangun sesuai cara kerja bisnis Anda.",
+          "Pembuatan aplikasi web dan mobile custom untuk bisnis di Sulawesi Utara, sistem booking, dashboard internal, sampai produk SaaS. Dibangun sesuai cara kerja bisnis Anda.",
         h1: "Aplikasi Web & Mobile Custom untuk Bisnis Anda",
         intro:
-          "Ketika spreadsheet dan aplikasi jadi sudah tidak cukup, kami bangun sistem yang mengikuti cara kerja bisnis Anda — bukan sebaliknya.",
+          "Ketika spreadsheet dan aplikasi jadi sudah tidak cukup, kami bangun sistem yang mengikuti cara kerja bisnis Anda, bukan sebaliknya.",
         audiences: [
           "Perusahaan logistik, pelayaran, dan distribusi yang butuh sistem operasional",
           "Klinik dan usaha jasa yang butuh sistem booking",
@@ -229,42 +229,42 @@ export const id = {
         ],
         price: "Didiskusikan sesuai kebutuhan",
         priceNote:
-          "Setiap sistem berbeda — kami petakan kebutuhan dulu, lalu beri estimasi biaya dan timeline yang jelas sebelum Anda memutuskan.",
+          "Setiap sistem berbeda, kami petakan kebutuhan dulu, lalu beri estimasi biaya dan timeline yang jelas sebelum Anda memutuskan.",
         proof: {
           label: "Di balik layanan ini",
           title: "Dibangun oleh engineer berpengalaman",
           text:
-            "Samuel, founder Imaginnative, adalah Full Stack Developer yang berpengalaman membangun aplikasi web dan mobile — termasuk sedang membangun produk SaaS-nya sendiri. Anda berdiskusi langsung dengan orang yang menulis kodenya.",
+            "Samuel, founder Imaginnative, adalah Full Stack Developer yang berpengalaman membangun aplikasi web dan mobile, termasuk sedang membangun produk SaaS-nya sendiri. Anda berdiskusi langsung dengan orang yang menulis kodenya.",
           linkLabel: "Kenali Samuel",
         },
         faq: [
           {
-            q: "Bisnis saya kecil — apakah aplikasi custom tidak berlebihan?",
+            q: "Bisnis saya kecil, apakah aplikasi custom tidak berlebihan?",
             a: "Kadang iya, dan kami akan bilang jujur kalau kebutuhan Anda cukup diselesaikan dengan tools yang sudah ada. Aplikasi custom baru masuk akal ketika proses bisnis Anda spesifik dan volume pekerjaannya menuntut sistem sendiri.",
           },
           {
             q: "Berapa lama pembuatan aplikasi?",
-            a: "Tergantung kompleksitas — dari beberapa minggu untuk sistem sederhana sampai beberapa bulan untuk produk lengkap. Timeline kami petakan di awal dan Anda mendapat update progres berkala.",
+            a: "Tergantung kompleksitas, dari beberapa minggu untuk sistem sederhana sampai beberapa bulan untuk produk lengkap. Timeline kami petakan di awal dan Anda mendapat update progres berkala.",
           },
           {
             q: "Bagaimana setelah aplikasi jadi?",
-            a: "Kami sediakan pendampingan dan layanan perawatan berkelanjutan — aplikasi Anda tetap berjalan, aman, dan bisa berkembang mengikuti bisnis.",
+            a: "Kami sediakan pendampingan dan layanan perawatan berkelanjutan, aplikasi Anda tetap berjalan, aman, dan bisa berkembang mengikuti bisnis.",
           },
         ],
         whatsappMessage:
           "Halo Imaginnative, saya ingin diskusi tentang pembuatan aplikasi custom untuk bisnis saya.",
       },
       digitalisasi: {
-        metaTitle: "Digitalisasi UMKM & Operasional Bisnis — Sulawesi Utara",
+        metaTitle: "Digitalisasi UMKM & Operasional Bisnis, Sulawesi Utara",
         metaDescription:
-          "Bantu bisnis di Sulawesi Utara go digital: setup Google Business Profile, WhatsApp Business, kasir digital (POS), dan pembayaran online — praktis dan langsung terpakai.",
+          "Bantu bisnis di Sulawesi Utara go digital: setup Google Business Profile, WhatsApp Business, kasir digital (POS), dan pembayaran online, praktis dan langsung terpakai.",
         h1: "Digitalisasi Operasional untuk UMKM & Bisnis Lokal",
         intro:
           "Go digital bukan cuma soal website. Kami tata sisi operasionalnya: pencatatan penjualan, WhatsApp Business, Google Business Profile, sampai pembayaran online.",
         audiences: [
           "UMKM kuliner yang pesanannya lewat WhatsApp dan masih dicatat manual",
           "Toko retail yang ingin kasir dan stok tercatat digital",
-          "Usaha jasa — salon, bengkel, laundry — yang ingin lebih mudah ditemukan",
+          "Usaha jasa, salon, bengkel, laundry, yang ingin lebih mudah ditemukan",
           "Bisnis yang belum muncul di Google Maps",
         ],
         deliverables: [
@@ -276,35 +276,35 @@ export const id = {
         ],
         price: "Didiskusikan sesuai kebutuhan",
         priceNote:
-          "Paketnya menyesuaikan kondisi usaha Anda — dari setup dasar sampai penataan operasional menyeluruh.",
+          "Paketnya menyesuaikan kondisi usaha Anda, dari setup dasar sampai penataan operasional menyeluruh.",
         proof: {
           label: "Di balik layanan ini",
           title: "Pendekatan praktis, bukan jargon",
           text:
-            "Kami pilihkan tools yang benar-benar terpakai oleh usaha sekelas Anda — bukan sistem mahal yang akhirnya tidak disentuh. Semua dijelaskan dalam bahasa sehari-hari.",
+            "Kami pilihkan tools yang benar-benar terpakai oleh usaha sekelas Anda, bukan sistem mahal yang akhirnya tidak disentuh. Semua dijelaskan dalam bahasa sehari-hari.",
           linkLabel: "Kenali Samuel",
         },
         faq: [
           {
-            q: "Saya gaptek — apakah nanti bisa saya jalankan sendiri?",
+            q: "Saya gaptek, apakah nanti bisa saya jalankan sendiri?",
             a: "Bisa. Semua setup kami serahkan dalam kondisi siap pakai, lengkap dengan panduan sederhana dan pendampingan sampai Anda dan tim terbiasa.",
           },
           {
             q: "Apa bedanya dengan menyewa admin sosial media?",
-            a: "Kami menata sistem dan fondasi digitalnya — profil Google, WhatsApp Business, pencatatan, pembayaran. Konten harian tetap bisa Anda pegang sendiri, dan justru jadi lebih mudah setelah fondasinya rapi.",
+            a: "Kami menata sistem dan fondasi digitalnya, profil Google, WhatsApp Business, pencatatan, pembayaran. Konten harian tetap bisa Anda pegang sendiri, dan justru jadi lebih mudah setelah fondasinya rapi.",
           },
           {
             q: "Usaha saya kecil, apakah layak investasi ini?",
-            a: "Justru usaha kecil yang paling terasa dampaknya — muncul di Google Maps dan WhatsApp yang tertata sering kali langsung menambah pelanggan tanpa biaya iklan.",
+            a: "Justru usaha kecil yang paling terasa dampaknya, muncul di Google Maps dan WhatsApp yang tertata sering kali langsung menambah pelanggan tanpa biaya iklan.",
           },
         ],
         whatsappMessage:
-          "Halo Imaginnative, saya ingin usaha saya go digital — mohon info layanan digitalisasi operasional.",
+          "Halo Imaginnative, saya ingin usaha saya go digital, mohon info layanan digitalisasi operasional.",
       },
       maintenance: {
         metaTitle: "Perawatan Website & Pengembangan Berkelanjutan",
         metaDescription:
-          "Layanan perawatan website untuk bisnis di Sulawesi Utara: keamanan, kecepatan, update konten, dan pengembangan fitur berkelanjutan — website Anda selalu siap kerja.",
+          "Layanan perawatan website untuk bisnis di Sulawesi Utara: keamanan, kecepatan, update konten, dan pengembangan fitur berkelanjutan, website Anda selalu siap kerja.",
         h1: "Perawatan & Pengembangan Website Berkelanjutan",
         intro:
           "Website yang dibiarkan akan melambat, usang, dan rawan masalah. Kami rawat agar tetap cepat, aman, dan berkembang bersama bisnis Anda.",
@@ -316,7 +316,7 @@ export const id = {
         ],
         deliverables: [
           "Monitoring uptime dan keamanan berkala",
-          "Update konten — harga, promo, foto — cukup kirim via WhatsApp",
+          "Update konten, harga, promo, foto, cukup kirim via WhatsApp",
           "Perbaikan bug dan penyesuaian kecil",
           "Laporan berkala performa website",
           "Prioritas pengerjaan untuk pengembangan fitur baru",
@@ -328,21 +328,21 @@ export const id = {
           label: "Di balik layanan ini",
           title: "Dikerjakan oleh yang membangunnya",
           text:
-            "Perawatan ditangani langsung oleh engineer — bukan tiket support yang berpindah tangan. Masalah kecil selesai sebelum jadi besar.",
+            "Perawatan ditangani langsung oleh engineer, bukan tiket support yang berpindah tangan. Masalah kecil selesai sebelum jadi besar.",
           linkLabel: "Kenali Samuel",
         },
         faq: [
           {
-            q: "Website saya dibuat orang lain — bisa dirawat Imaginnative?",
+            q: "Website saya dibuat orang lain, bisa dirawat Imaginnative?",
             a: "Bisa. Kami mulai dengan audit singkat kondisi website Anda, lalu rekomendasikan apa yang perlu dibereskan sebelum masuk perawatan rutin.",
           },
           {
             q: "Apakah saya harus terikat kontrak panjang?",
-            a: "Tidak — paket berjalan bulanan dan bisa dihentikan kapan saja. Kami percaya Anda bertahan karena hasilnya, bukan karena kontrak.",
+            a: "Tidak, paket berjalan bulanan dan bisa dihentikan kapan saja. Kami percaya Anda bertahan karena hasilnya, bukan karena kontrak.",
           },
           {
             q: "Bagaimana cara minta update konten?",
-            a: "Cukup kirim via WhatsApp — perubahan kecil biasanya selesai dalam hitungan hari kerja.",
+            a: "Cukup kirim via WhatsApp, perubahan kecil biasanya selesai dalam hitungan hari kerja.",
           },
         ],
         whatsappMessage:

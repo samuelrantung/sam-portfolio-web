@@ -46,3 +46,8 @@ AGENTS.md
 /.agents
 CLAUDE.md
 skills-lock.json
+/.claude
+/.impeccable
+/.codex
+/.gemini
+/design-preview

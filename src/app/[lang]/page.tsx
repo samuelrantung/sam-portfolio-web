@@ -3,11 +3,10 @@ import { notFound } from "next/navigation";
 import { getDictionary, hasLocale, alternatesFor } from "@/lib/i18n";
 import { faqPageJsonLd, jsonLdScript } from "@/lib/schema";
 import Hero from "@/components/agency/home/Hero";
-import PainOutcome from "@/components/agency/home/PainOutcome";
 import ServicesGrid from "@/components/agency/home/ServicesGrid";
 import Proof from "@/components/agency/home/Proof";
-import FounderStrip from "@/components/agency/home/FounderStrip";
 import ProcessSteps from "@/components/agency/home/ProcessSteps";
+import FounderStrip from "@/components/agency/home/FounderStrip";
 import FaqAccordion from "@/components/agency/home/FaqAccordion";
 import FinalCta from "@/components/agency/home/FinalCta";
 
@@ -28,17 +27,16 @@ export default async function HomePage(props: { params: Promise<{ lang: string }
   );
 
   return (
-    <main className="flex-1 pt-16">
+    <main className="flex-1">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: jsonLdScript(faqPageJsonLd(faqItems)) }}
       />
       <Hero dict={dict} locale={lang} />
-      <PainOutcome dict={dict} />
       <ServicesGrid dict={dict} locale={lang} />
       <Proof dict={dict} />
-      <FounderStrip dict={dict} locale={lang} />
       <ProcessSteps dict={dict} />
+      <FounderStrip dict={dict} locale={lang} />
       <FaqAccordion heading={dict.home.faq.heading} items={faqItems} />
       <FinalCta dict={dict} />
     </main>

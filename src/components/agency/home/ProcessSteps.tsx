@@ -1,43 +1,40 @@
 // src/components/agency/home/ProcessSteps.tsx
-import { MessageCircle, Hammer, Rocket } from "lucide-react";
 import type { Dictionary } from "@/lib/i18n";
-
-const steps = [
-  { key: "consult", Icon: MessageCircle },
-  { key: "build", Icon: Hammer },
-  { key: "launch", Icon: Rocket },
-] as const;
 
 export default function ProcessSteps({ dict }: { dict: Dictionary }) {
   const process = dict.home.process;
 
   return (
-    <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-      <h2 className="text-3xl sm:text-4xl font-bold font-display text-foreground text-center mb-12 reveal-on-scroll">
-        {process.heading}
-      </h2>
-      <ol className="grid md:grid-cols-3 gap-6">
-        {steps.map(({ key, Icon }, i) => {
-          const step = process.steps[key];
-          return (
-            <li
-              key={key}
-              className="reveal-on-scroll rounded-2xl border border-border/40 bg-card p-6"
-            >
-              <div className="flex items-center gap-3 mb-4">
-                <span className="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center text-sm font-bold">
-                  {i + 1}
-                </span>
-                <Icon className="w-5 h-5 text-primary" />
-              </div>
-              <h3 className="text-lg font-bold font-display text-foreground mb-2">
-                {step.title}
-              </h3>
-              <p className="text-sm text-muted leading-relaxed">{step.desc}</p>
-            </li>
-          );
-        })}
-      </ol>
+    <section className="sec">
+      <div className="wrap">
+        <div className="split mb-1.5">
+          <div className="lead-col">
+            <span className="idx">04 / Cara kerja</span>
+            <h2 className="fk mt-2.5">{process.heading}</h2>
+          </div>
+          <p className="muted self-end max-w-[44ch]">
+            Dari obrolan pertama sampai website atau sistem Anda hidup dan terawat.
+          </p>
+        </div>
+
+        <div className="process-grid">
+          <div className="step">
+            <div className="bignum">01</div>
+            <h3>{process.steps.consult.title}</h3>
+            <p>{process.steps.consult.desc}</p>
+          </div>
+          <div className="step">
+            <div className="bignum">02</div>
+            <h3>{process.steps.build.title}</h3>
+            <p>{process.steps.build.desc}</p>
+          </div>
+          <div className="step">
+            <div className="bignum">03</div>
+            <h3>{process.steps.launch.title}</h3>
+            <p>{process.steps.launch.desc}</p>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }

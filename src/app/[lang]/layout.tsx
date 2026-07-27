@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Outfit } from "next/font/google";
+import { Fredoka, Hanken_Grotesk, Caveat } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { notFound } from "next/navigation";
 import { GoogleAnalytics } from "@next/third-parties/google";
@@ -11,16 +11,25 @@ import AgencyNavbar from "@/components/agency/AgencyNavbar";
 import AgencyFooter from "@/components/agency/AgencyFooter";
 import { getDictionary, hasLocale } from "@/lib/i18n";
 
-const inter = Inter({
+const fredoka = Fredoka({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-fredoka",
   display: "swap",
+  weight: ["400", "500", "600", "700"],
 });
 
-const outfit = Outfit({
+const hanken = Hanken_Grotesk({
   subsets: ["latin"],
-  variable: "--font-outfit",
+  variable: "--font-hanken",
   display: "swap",
+  weight: ["400", "500", "600", "700"],
+});
+
+const caveat = Caveat({
+  subsets: ["latin"],
+  variable: "--font-caveat",
+  display: "swap",
+  weight: ["600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -30,7 +39,7 @@ export const metadata: Metadata = {
     template: "%s | Imaginnative",
   },
   description:
-    "Imaginnative membantu bisnis di Sulawesi Utara go digital — dari website profesional dan landing page sampai aplikasi custom dan digitalisasi operasional.",
+    "Imaginnative membantu bisnis di Sulawesi Utara go digital: dari website profesional dan landing page sampai aplikasi custom dan digitalisasi operasional.",
   keywords: [
     "jasa pembuatan website Manado",
     "jasa pembuatan website Sulawesi Utara",
@@ -47,21 +56,6 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 5,
 };
-
-// Inline script to prevent flashing on theme loads
-const themeInitScript = `
-  (function() {
-    try {
-      const theme = localStorage.getItem('theme');
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      if (theme === 'dark' || (!theme && prefersDark)) {
-        document.documentElement.classList.add('dark');
-      } else {
-        document.documentElement.classList.remove('dark');
-      }
-    } catch (_) {}
-  })();
-`;
 
 export async function generateStaticParams() {
   return [{ lang: "id" }, { lang: "en" }];
@@ -81,13 +75,9 @@ export default async function RootLayout({
   return (
     <html
       lang={lang}
-      className={`${inter.variable} ${outfit.variable} h-full`}
-      suppressHydrationWarning
+      className={`${fredoka.variable} ${hanken.variable} ${caveat.variable} h-full`}
     >
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
-      </head>
-      <body className="min-h-full bg-background text-foreground antialiased flex flex-col font-sans">
+      <body className="min-h-full bg-paper text-ink antialiased flex flex-col font-sans">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: jsonLdScript(organizationJsonLd()) }}

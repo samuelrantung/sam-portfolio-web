@@ -21,7 +21,7 @@ export const en: Dictionary = {
       titleLead: "Your Business Deserves",
       titleHighlight: "To Be Found",
       subtitle:
-        "The digital partner for businesses in North Sulawesi — from professional websites and landing pages to custom apps and digital operations.",
+        "The digital partner for businesses in North Sulawesi, from professional websites and landing pages to custom apps and digital operations.",
       trust: {
         founderLed: "Led directly by its engineer",
         roi: "Our first project already paid for itself for the client",
@@ -34,7 +34,7 @@ export const en: Dictionary = {
       afterLabel: "With Imaginnative",
       items: {
         visibility: {
-          before: "Potential customers search on Google — and find your competitors.",
+          before: "Potential customers search on Google, and find your competitors.",
           after: "Your business gets found first, with contact details one tap away.",
         },
         operations: {
@@ -64,7 +64,7 @@ export const en: Dictionary = {
         },
         digitalisasi: {
           title: "Digital Operations",
-          outcome: "POS, WhatsApp Business, online payments — operations, organized.",
+          outcome: "POS, WhatsApp Business, online payments: operations, organized.",
           price: "Scoped through consultation",
         },
         maintenance: {
@@ -79,25 +79,25 @@ export const en: Dictionary = {
       caseStudy: {
         label: "Case Study",
         client: "PT Seraya Bahari Agensi",
-        industry: "Shipping agency — Bitung, North Sulawesi",
+        industry: "Shipping agency, Bitung, North Sulawesi",
         story:
           "Seraya Bahari runs vessel agency operations across Indonesia's eastern maritime corridor, but lacked a convincing online presence. We built their landing page from scratch: service profile, branch coverage, and easy-to-reach WhatsApp contact.",
         resultLabel: "The result",
         result:
-          "A new customer contacted Seraya after finding them through the website — and the revenue covered the cost of the website project.",
+          "A new customer contacted Seraya after finding them through the website, and the revenue covered the cost of the website project.",
         visit: "Visit the website",
       },
       testimonial: {
         heading: "What our clients say",
         quote:
-          "The website Imaginnative built isn't just a pretty face. A new customer reached out because they found our contact through it — the investment has already paid for itself.",
+          "The website Imaginnative built isn't just a pretty face. A new customer reached out because they found our contact through it, the investment has already paid for itself.",
         attribution: "Owner, PT Seraya Bahari Agensi",
       },
     },
     founder: {
       heading: "Behind Imaginnative",
       body:
-        "Imaginnative is led directly by Samuel Rantung, a Full Stack Developer experienced in building web and mobile products. No account-manager layer — you talk to the person building your product, from first consultation to launch.",
+        "Imaginnative is led directly by Samuel Rantung, a Full Stack Developer experienced in building web and mobile products. No account-manager layer: you talk to the person building your product, from first consultation to launch.",
       linkLabel: "Meet Samuel",
     },
     process: {
@@ -105,7 +105,7 @@ export const en: Dictionary = {
       steps: {
         consult: {
           title: "Consult",
-          desc: "Tell us what your business needs via WhatsApp. We map the solution and estimate — no commitment.",
+          desc: "Tell us what your business needs via WhatsApp. We map the solution and estimate, no commitment.",
         },
         build: {
           title: "Design & Build",
@@ -113,7 +113,7 @@ export const en: Dictionary = {
         },
         launch: {
           title: "Launch & Care",
-          desc: "Once live, we keep everything running — ready to grow with your business.",
+          desc: "Once live, we keep everything running, ready to grow with your business.",
         },
       },
     },
@@ -122,25 +122,25 @@ export const en: Dictionary = {
       items: {
         cost: {
           q: "How much does a website cost?",
-          a: "Landing pages start at Rp 3 million and company websites at Rp 5 million, depending on pages and features. Custom apps and digital operations are scoped through consultation.",
+          a: "Landing pages start at Rp 3 million, depending on pages and features. Custom apps and digital operations are scoped through consultation.",
         },
         duration: {
           q: "How long does it take?",
           a: "Landing pages are typically done within weeks; for larger projects we map the timeline upfront so you know what to expect before we start.",
         },
         nonTech: {
-          q: "I'm not technical — can this still work?",
-          a: "That's exactly our job. You talk about your business; we handle the tech, hosting, and domain — explained in plain language.",
+          q: "I'm not technical: can this still work?",
+          a: "That's exactly our job. You talk about your business; we handle the tech, hosting, and domain, explained in plain language.",
         },
         after: {
           q: "What happens after the website is live?",
-          a: "Websites need care to stay secure and fast. We offer ongoing care & growth plans — or full handover if that's what you prefer.",
+          a: "Websites need care to stay secure and fast. We offer ongoing care & growth plans, or full handover if that's what you prefer.",
         },
       },
     },
     finalCta: {
       heading: "Ready to get your business found?",
-      subheading: "Tell us what you need — we'll map out your digitalization path.",
+      subheading: "Tell us what you need, we'll map out your digitalization path.",
     },
   },
   layanan: {
@@ -150,7 +150,7 @@ export const en: Dictionary = {
         "Website development, custom apps, digital operations, and website care for businesses in Manado, Bitung, and across North Sulawesi.",
       h1: "Our services",
       intro:
-        "From your first website to custom systems — pick what your business needs most right now. Not sure where to start? Just tell us what you need via WhatsApp.",
+        "From your first website to custom systems, pick what your business needs most right now. Not sure where to start? Just tell us what you need via WhatsApp.",
     },
     sections: {
       audiences: "Who this is for",
@@ -160,12 +160,12 @@ export const en: Dictionary = {
     },
     items: {
       website: {
-        metaTitle: "Website Development — Manado & North Sulawesi",
+        metaTitle: "Website Development: Manado & North Sulawesi",
         metaDescription:
-          "Professional websites and landing pages for businesses in Manado and North Sulawesi. Landing pages from Rp 3 million, company websites from Rp 5 million.",
+          "Professional websites and landing pages for businesses in Manado and North Sulawesi. Landing pages from Rp 3 million.",
         h1: "Website Development for Businesses in North Sulawesi",
         intro:
-          "A website that gets your business found on Google, trusted by potential customers, and reachable in one WhatsApp tap — not just an online brochure.",
+          "A website that gets your business found on Google, trusted by potential customers, and reachable in one WhatsApp tap, not just an online brochure.",
         audiences: [
           "Resorts, guesthouses, and tourism businesses that want to be found by guests",
           "Restaurants, cafés, and culinary businesses",
@@ -179,12 +179,12 @@ export const en: Dictionary = {
           "Fast, clean display on phones and laptops",
           "Domain, hosting, and technical setup handled by us",
         ],
-        price: "Landing pages from Rp 3 million · company websites from Rp 5 million",
+        price: "Landing pages from Rp 3 million",
         priceNote:
-          "Final pricing depends on pages and features — you get a clear breakdown before we start.",
+          "Final pricing depends on pages and features, you get a clear breakdown before we start.",
         proof: {
           label: "Proven",
-          title: "PT Seraya Bahari Agensi — Bitung",
+          title: "PT Seraya Bahari Agensi, Bitung",
           text:
             "We built Seraya Bahari's landing page from scratch. The result: a new customer contacted them after finding their details through the website, and the project paid for itself from that revenue.",
           linkLabel: "Visit the website",
@@ -192,27 +192,27 @@ export const en: Dictionary = {
         faq: [
           {
             q: "What's the difference between a landing page and a company website?",
-            a: "A landing page is a single focused page that introduces your business and routes visitors to WhatsApp — a great first step. A company website has multiple pages (profile, services, gallery, contact) for businesses that need a fuller presence.",
+            a: "A landing page is a single focused page that introduces your business and routes visitors to WhatsApp, a great first step. A company website has multiple pages (profile, services, gallery, contact) for businesses that need a fuller presence.",
           },
           {
             q: "Do I need to prepare my own materials?",
-            a: "Just photos and basic business information. We handle structure, copywriting, and design — you review everything before it goes live.",
+            a: "Just photos and basic business information. We handle structure, copywriting, and design, you review everything before it goes live.",
           },
           {
             q: "Will my website show up on Google?",
-            a: "Yes — every website we build includes local SEO: the keywords people in your area actually search, fast loading, and a structure Google favors.",
+            a: "Yes: every website we build includes local SEO: the keywords people in your area actually search, fast loading, and a structure Google favors.",
           },
         ],
         whatsappMessage:
           "Hi Imaginnative, I'm interested in a website for my business.",
       },
       aplikasi: {
-        metaTitle: "Custom Web & Mobile App Development — North Sulawesi",
+        metaTitle: "Custom Web & Mobile App Development: North Sulawesi",
         metaDescription:
-          "Custom web and mobile applications for businesses in North Sulawesi — booking systems, internal dashboards, and SaaS products. Built around how your business works.",
+          "Custom web and mobile applications for businesses in North Sulawesi: booking systems, internal dashboards, and SaaS products. Built around how your business works.",
         h1: "Custom Web & Mobile Apps for Your Business",
         intro:
-          "When spreadsheets and off-the-shelf apps stop being enough, we build systems that follow how your business works — not the other way around.",
+          "When spreadsheets and off-the-shelf apps stop being enough, we build systems that follow how your business works, not the other way around.",
         audiences: [
           "Logistics, shipping, and distribution companies that need operational systems",
           "Clinics and service businesses that need booking systems",
@@ -228,42 +228,42 @@ export const en: Dictionary = {
         ],
         price: "Scoped through consultation",
         priceNote:
-          "Every system is different — we map your needs first, then give a clear cost and timeline estimate before you decide.",
+          "Every system is different: we map your needs first, then give a clear cost and timeline estimate before you decide.",
         proof: {
           label: "Behind this service",
           title: "Built by an experienced engineer",
           text:
-            "Samuel, Imaginnative's founder, is a Full Stack Developer experienced in building web and mobile apps — currently building his own SaaS product. You discuss directly with the person writing the code.",
+            "Samuel, Imaginnative's founder, is a Full Stack Developer experienced in building web and mobile apps, currently building his own SaaS product. You discuss directly with the person writing the code.",
           linkLabel: "Meet Samuel",
         },
         faq: [
           {
-            q: "My business is small — isn't a custom app overkill?",
-            a: "Sometimes, yes — and we'll say so honestly if existing tools cover your needs. A custom app makes sense when your processes are specific and the workload demands a system of your own.",
+            q: "My business is small: isn't a custom app overkill?",
+            a: "Sometimes, yes, and we'll say so honestly if existing tools cover your needs. A custom app makes sense when your processes are specific and the workload demands a system of your own.",
           },
           {
             q: "How long does app development take?",
-            a: "It depends on complexity — from a few weeks for simple systems to several months for full products. We map the timeline upfront and you get regular progress updates.",
+            a: "It depends on complexity: from a few weeks for simple systems to several months for full products. We map the timeline upfront and you get regular progress updates.",
           },
           {
             q: "What happens after the app is done?",
-            a: "We provide onboarding and ongoing care — your app keeps running, stays secure, and can grow with your business.",
+            a: "We provide onboarding and ongoing care: your app keeps running, stays secure, and can grow with your business.",
           },
         ],
         whatsappMessage:
           "Hi Imaginnative, I'd like to discuss a custom app for my business.",
       },
       digitalisasi: {
-        metaTitle: "SMB Digitalization & Digital Operations — North Sulawesi",
+        metaTitle: "SMB Digitalization & Digital Operations: North Sulawesi",
         metaDescription:
-          "Helping North Sulawesi businesses go digital: Google Business Profile, WhatsApp Business, digital point-of-sale, and online payments — practical and immediately usable.",
+          "Helping North Sulawesi businesses go digital: Google Business Profile, WhatsApp Business, digital point-of-sale, and online payments, practical and immediately usable.",
         h1: "Digital Operations for Local Businesses",
         intro:
           "Going digital isn't just about a website. We organize the operational side: sales records, WhatsApp Business, Google Business Profile, and online payments.",
         audiences: [
           "Culinary businesses taking orders on WhatsApp and tracking them by hand",
           "Retail shops that want digital records for sales and stock",
-          "Service businesses — salons, workshops, laundries — that want to be easier to find",
+          "Service businesses (salons, workshops, laundries) that want to be easier to find",
           "Businesses not yet visible on Google Maps",
         ],
         deliverables: [
@@ -275,35 +275,35 @@ export const en: Dictionary = {
         ],
         price: "Scoped through consultation",
         priceNote:
-          "The package adapts to your business — from basic setup to a full operational overhaul.",
+          "The package adapts to your business, from basic setup to a full operational overhaul.",
         proof: {
           label: "Behind this service",
           title: "Practical, no jargon",
           text:
-            "We pick tools that businesses your size will actually use — not expensive systems that end up untouched. Everything explained in everyday language.",
+            "We pick tools that businesses your size will actually use, not expensive systems that end up untouched. Everything explained in everyday language.",
           linkLabel: "Meet Samuel",
         },
         faq: [
           {
-            q: "I'm not technical — will I be able to run this myself?",
+            q: "I'm not technical: will I be able to run this myself?",
             a: "Yes. Everything is handed over ready to use, with simple guides and support until you and your team are comfortable.",
           },
           {
             q: "How is this different from hiring a social media admin?",
-            a: "We build the digital foundation — Google profile, WhatsApp Business, records, payments. Daily content stays in your hands, and it gets easier once the foundation is in order.",
+            a: "We build the digital foundation: Google profile, WhatsApp Business, records, payments. Daily content stays in your hands, and it gets easier once the foundation is in order.",
           },
           {
-            q: "My business is small — is this worth the investment?",
-            a: "Small businesses feel it most — showing up on Google Maps with organized WhatsApp often brings new customers without ad spend.",
+            q: "My business is small: is this worth the investment?",
+            a: "Small businesses feel it most: showing up on Google Maps with organized WhatsApp often brings new customers without ad spend.",
           },
         ],
         whatsappMessage:
-          "Hi Imaginnative, I want my business to go digital — please tell me about your digital operations service.",
+          "Hi Imaginnative, I want my business to go digital, please tell me about your digital operations service.",
       },
       maintenance: {
         metaTitle: "Website Care & Continuous Development",
         metaDescription:
-          "Website care for businesses in North Sulawesi: security, speed, content updates, and continuous feature development — your website always ready to work.",
+          "Website care for businesses in North Sulawesi: security, speed, content updates, and continuous feature development, your website always ready to work.",
         h1: "Website Care & Continuous Development",
         intro:
           "A neglected website gets slow, stale, and fragile. We keep yours fast, secure, and growing with your business.",
@@ -315,7 +315,7 @@ export const en: Dictionary = {
         ],
         deliverables: [
           "Regular uptime and security monitoring",
-          "Content updates — prices, promos, photos — just send them via WhatsApp",
+          "Content updates (prices, promos, photos), just send them via WhatsApp",
           "Bug fixes and small adjustments",
           "Periodic performance reports",
           "Priority handling for new feature development",
@@ -327,21 +327,21 @@ export const en: Dictionary = {
           label: "Behind this service",
           title: "Maintained by the person who builds",
           text:
-            "Care is handled directly by an engineer — not a support ticket passed around. Small issues get fixed before they become big ones.",
+            "Care is handled directly by an engineer, not a support ticket passed around. Small issues get fixed before they become big ones.",
           linkLabel: "Meet Samuel",
         },
         faq: [
           {
-            q: "Someone else built my website — can Imaginnative maintain it?",
+            q: "Someone else built my website: can Imaginnative maintain it?",
             a: "Yes. We start with a short audit of your website's condition, then recommend what needs fixing before regular care begins.",
           },
           {
             q: "Am I locked into a long contract?",
-            a: "No — plans run monthly and can stop anytime. We'd rather you stay for the results, not the contract.",
+            a: "No: plans run monthly and can stop anytime. We'd rather you stay for the results, not the contract.",
           },
           {
             q: "How do I request content updates?",
-            a: "Just send them via WhatsApp — small changes are usually done within working days.",
+            a: "Just send them via WhatsApp: small changes are usually done within working days.",
           },
         ],
         whatsappMessage:

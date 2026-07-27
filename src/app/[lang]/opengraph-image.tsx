@@ -19,14 +19,22 @@ export default async function Image({ params }: { params: Promise<{ lang: string
           flexDirection: "column",
           justifyContent: "center",
           padding: "80px",
-          background: "#222831",
-          color: "#EEEEEE",
+          background: "#ffffff",
+          color: "#131313",
+          borderBottom: "12px solid #131313",
         }}
       >
         <div style={{ fontSize: 72, fontWeight: 700, display: "flex" }}>
-          imagi<span style={{ color: "#FBD46D" }}>nn</span>ative
+          imaginnative
         </div>
-        <div style={{ fontSize: 32, marginTop: 24, color: "#4F8A8B", display: "flex" }}>
+        <div
+          style={{
+            fontSize: 32,
+            marginTop: 24,
+            color: "rgba(19, 19, 19, 0.6)",
+            display: "flex",
+          }}
+        >
           {dict.footer.tagline}
         </div>
       </div>

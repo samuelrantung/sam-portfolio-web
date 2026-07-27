@@ -1,55 +1,45 @@
-// src/app/layanan/[service]/page.tsx
+// src/app/[lang]/layanan/[service]/page.tsx
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import {
-  Globe,
-  Smartphone,
-  Workflow,
-  ShieldCheck,
-  Check,
-  Users,
-  ExternalLink,
-  ArrowRight,
-  MessageCircle,
-} from "lucide-react";
+import { Globe, Smartphone, Workflow, ShieldCheck, Check } from "lucide-react";
 import { getDictionary, hasLocale, localePath, alternatesFor } from "@/lib/i18n";
 import { serviceJsonLd, breadcrumbJsonLd, faqPageJsonLd, jsonLdScript } from "@/lib/schema";
 import WhatsAppLink from "@/components/agency/WhatsAppLink";
 import FaqAccordion from "@/components/agency/home/FaqAccordion";
 import FinalCta from "@/components/agency/home/FinalCta";
 
-const serviceConfig = {
+interface ServiceMeta {
+  Icon: React.ComponentType<{ className?: string }>;
+  proofHref: string;
+  proofExternal: boolean;
+  proofImage?: string;
+}
+
+const serviceConfig: Record<string, ServiceMeta> = {
   website: {
     Icon: Globe,
     proofHref: "https://seraya-agency.com/",
     proofExternal: true,
     proofImage: "/portfolio/seraya/seraya-hero-section.png",
-    proofImageAspect: "aspect-[3438/1616]",
   },
   aplikasi: {
     Icon: Smartphone,
     proofHref: "/tentang/samuel",
     proofExternal: false,
-    proofImage: undefined,
-    proofImageAspect: undefined,
   },
   digitalisasi: {
     Icon: Workflow,
     proofHref: "/tentang/samuel",
     proofExternal: false,
-    proofImage: undefined,
-    proofImageAspect: undefined,
   },
   maintenance: {
     Icon: ShieldCheck,
     proofHref: "/tentang/samuel",
     proofExternal: false,
-    proofImage: undefined,
-    proofImageAspect: undefined,
   },
-} as const;
+};
 
 type ServiceKey = keyof typeof serviceConfig;
 
@@ -64,7 +54,8 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   const { lang, service } = await props.params;
   if (!hasLocale(lang) || !isServiceKey(service)) return {};
-  const item = getDictionary(lang).layanan.items[service];
+  const items = getDictionary(lang).layanan.items;
+  const item = items[service as keyof typeof items];
   return {
     title: item.metaTitle,
     description: item.metaDescription,
@@ -81,12 +72,12 @@ export default async function ServicePage(
 
   const dict = getDictionary(lang);
   const sections = dict.layanan.sections;
-  const item = dict.layanan.items[service];
+  const items = dict.layanan.items;
+  const item = items[service as keyof typeof items];
   const config = serviceConfig[service];
-  const { Icon } = config;
 
   return (
-    <main className="flex-1 pt-16">
+    <main className="flex-1">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -110,143 +101,171 @@ export default async function ServicePage(
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: jsonLdScript(faqPageJsonLd(item.faq)),
+          __html: jsonLdScript(faqPageJsonLd(item.faq as unknown as Array<{ q: string; a: string }>)),
         }}
       />
-      {/* 1. H1 + intro */}
-      <section className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-10 text-center">
-        <div className="w-14 h-14 mx-auto mb-6 rounded-2xl bg-primary/10 flex items-center justify-center">
-          <Icon className="w-7 h-7 text-primary" />
-        </div>
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold font-display tracking-tight text-foreground mb-4 leading-tight">
-          {item.h1}
-        </h1>
-        <p className="text-lg text-muted leading-relaxed mb-8">{item.intro}</p>
-        <div className="flex flex-col items-center gap-2">
-          <WhatsAppLink
-            message={item.whatsappMessage}
-            source={`service_${service}_hero`}
-            className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-primary text-primary-foreground hover:bg-primary/90 font-semibold text-sm shadow-md hover:shadow-lg transition-all duration-300"
+
+      {/* 1. Header (H1 + intro + CTA) */}
+      <section className="sec" style={{ borderTop: 0 }}>
+        <div className="wrap">
+          <span className="idx">Layanan</span>
+          <h1
+            className="fk"
+            style={{
+              fontSize: "clamp(2.4rem, 5vw, 3.6rem)",
+              marginTop: "10px",
+              maxWidth: "20ch",
+            }}
           >
-            <MessageCircle className="w-4 h-4" />
-            {dict.cta.whatsappLabel}
-            <ArrowRight className="w-4 h-4 ml-1" />
-          </WhatsAppLink>
-          <span className="text-xs text-muted">{dict.cta.whatsappNote}</span>
+            {item.h1}
+          </h1>
+          <p
+            className="muted"
+            style={{ maxWidth: "52ch", marginTop: "14px", fontSize: "1.14rem" }}
+          >
+            {item.intro}
+          </p>
+          <div className="flex items-center gap-4 mt-6">
+            <WhatsAppLink
+              message={item.whatsappMessage}
+              source={`service_${service}_hero`}
+              className="pill"
+            >
+              {dict.cta.whatsappLabel}
+            </WhatsAppLink>
+            <span className="hand muted">{dict.cta.whatsappNote}</span>
+          </div>
         </div>
       </section>
 
-      {/* 2. Who it's for */}
-      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <h2 className="text-2xl font-bold font-display text-foreground mb-6 flex items-center gap-2 reveal-on-scroll">
-          <Users className="w-6 h-6 text-primary" />
-          {sections.audiences}
-        </h2>
-        <ul className="grid sm:grid-cols-2 gap-3">
-          {item.audiences.map((a) => (
-            <li
-              key={a}
-              className="reveal-on-scroll rounded-xl border border-border/40 bg-card p-4 text-sm text-foreground/90 leading-relaxed"
-            >
-              {a}
-            </li>
-          ))}
-        </ul>
+      {/* 2. Who it is for */}
+      <section className="sec">
+        <div className="wrap">
+          <div className="split">
+            <div className="lead-col">
+              <span className="idx">01 / {sections.audiences}</span>
+            </div>
+            <div>
+              {(item.audiences as readonly string[]).map((a: string, i: number) => (
+                <div
+                  key={a}
+                  className="reveal-on-scroll py-4 text-ink text-base sm:text-lg border-t border-line"
+                  style={{
+                    borderBottom:
+                      i === item.audiences.length - 1
+                        ? "1px solid var(--line)"
+                        : "none",
+                  }}
+                >
+                  {a}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* 3. Deliverables */}
-      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <h2 className="text-2xl font-bold font-display text-foreground mb-6 reveal-on-scroll">
-          {sections.deliverables}
-        </h2>
-        <ul className="space-y-3">
-          {item.deliverables.map((d) => (
-            <li key={d} className="reveal-on-scroll flex items-start gap-3 text-sm text-foreground/90 leading-relaxed">
-              <Check className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-              {d}
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      {/* 4. Price anchor */}
-      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="reveal-on-scroll rounded-2xl border border-primary/20 bg-primary/5 p-8">
-          <p className="text-xs font-semibold uppercase tracking-wide text-primary mb-2">
-            {sections.pricing}
-          </p>
-          <p className="text-xl sm:text-2xl font-bold font-display text-foreground mb-2">
-            {item.price}
-          </p>
-          <p className="text-sm text-muted leading-relaxed">{item.priceNote}</p>
+      <section className="sec">
+        <div className="wrap">
+          <div className="split">
+            <div className="lead-col">
+              <span className="idx">02 / {sections.deliverables}</span>
+            </div>
+            <div>
+              {(item.deliverables as readonly string[]).map((d: string, i: number) => (
+                <div
+                  key={d}
+                  className="reveal-on-scroll flex items-start gap-3 py-4 text-ink text-base sm:text-lg border-t border-line"
+                  style={{
+                    borderBottom:
+                      i === item.deliverables.length - 1
+                        ? "1px solid var(--line)"
+                        : "none",
+                  }}
+                >
+                  <Check className="w-5 h-5 text-ink shrink-0 mt-1" />
+                  <span>{d}</span>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* 5. Proof */}
-      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className={`reveal-on-scroll bg-card border border-border/40 rounded-3xl p-6 sm:p-8 md:p-10 ${config.proofImage ? "grid grid-cols-1 md:grid-cols-12 gap-8 items-center" : ""}`}>
-          <div className={`${config.proofImage ? "md:col-span-7" : ""} space-y-4`}>
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-wide text-primary mb-2">
-                {item.proof.label}
-              </p>
-              <h2 className="text-xl font-bold font-display text-foreground mb-3 leading-tight">
+      {/* 4. Proof */}
+      {config.proofImage ? (
+        <section className="bw">
+          <div className="k left">
+            <div className="inner">
+              <span className="idx idx-w">{item.proof.label}</span>
+              <h3 className="fk mt-3 mb-4 text-white text-2xl sm:text-3xl">
                 {item.proof.title}
-              </h2>
-              <p className="text-sm text-foreground/90 leading-relaxed">
+              </h3>
+              <p className="text-gray-1 leading-relaxed text-base">
                 {item.proof.text}
               </p>
             </div>
-            
-            <div className="pt-2">
+          </div>
+          <div className="w right">
+            <div className="inner">
+              <Image
+                src={config.proofImage}
+                alt={item.proof.title}
+                width={900}
+                height={560}
+                className="w-full h-auto border border-line mb-6"
+              />
               {config.proofExternal ? (
                 <a
                   href={config.proofHref}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2.5 text-sm font-semibold text-primary hover:text-primary/80 transition-colors group/btn"
+                  className="link-cta"
                 >
-                  {item.proof.linkLabel}
-                  <span className="w-7 h-7 rounded-full bg-primary/10 flex items-center justify-center transition-all duration-300 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-0.5 group-hover/btn:bg-primary/20">
-                    <ExternalLink className="w-3.5 h-3.5" />
-                  </span>
+                  {item.proof.linkLabel} <span className="arw">&rarr;</span>
                 </a>
               ) : (
                 <Link
                   href={localePath(lang, config.proofHref)}
-                  className="inline-flex items-center gap-2.5 text-sm font-semibold text-primary hover:text-primary/80 transition-colors group/btn"
+                  className="link-cta"
                 >
-                  {item.proof.linkLabel}
-                  <span className="w-7 h-7 rounded-full bg-primary/10 flex items-center justify-center transition-all duration-300 group-hover/btn:translate-x-1 group-hover/btn:bg-primary/20">
-                    <ArrowRight className="w-4 h-4" />
-                  </span>
+                  {item.proof.linkLabel} <span className="arw">&rarr;</span>
                 </Link>
               )}
             </div>
           </div>
-
-          {config.proofImage && (
-            <div className="md:col-span-5">
-              <div className="rounded-[1.5rem] border border-border/30 bg-muted/20 p-1.5 shadow-inner">
-                <div className={`rounded-[calc(1.5rem-0.375rem)] overflow-hidden relative w-full border border-border/40 bg-muted ${config.proofImageAspect ?? "aspect-[16/10]"}`}>
-                  <Image
-                    src={config.proofImage}
-                    alt={item.proof.title}
-                    fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 40vw, 30vw"
-                    className="object-cover"
-                  />
-                </div>
+        </section>
+      ) : (
+        <section className="sec">
+          <div className="wrap">
+            <div className="split">
+              <div className="lead-col">
+                <span className="idx">{item.proof.label}</span>
+              </div>
+              <div>
+                <h2 className="fk text-2xl sm:text-3xl mb-3">
+                  {item.proof.title}
+                </h2>
+                <p className="muted text-base leading-relaxed mb-6 max-w-[52ch]">
+                  {item.proof.text}
+                </p>
+                <Link
+                  href={localePath(lang, config.proofHref)}
+                  className="link-cta"
+                >
+                  {item.proof.linkLabel} <span className="arw">&rarr;</span>
+                </Link>
               </div>
             </div>
-          )}
-        </div>
-      </section>
+          </div>
+        </section>
+      )}
 
-      {/* 6. Mini FAQ */}
-      <FaqAccordion heading={sections.faq} items={[...item.faq]} />
+      {/* 5. Mini FAQ */}
+      <FaqAccordion heading={sections.faq} items={[...(item.faq as unknown as Array<{ q: string; a: string }>)]} />
 
-      {/* 7. Final CTA — service-specific prefill */}
+      {/* 6. Final CTA */}
       <FinalCta
         dict={dict}
         whatsappMessage={item.whatsappMessage}

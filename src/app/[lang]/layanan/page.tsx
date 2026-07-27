@@ -24,7 +24,7 @@ export default async function LayananPage(props: { params: Promise<{ lang: strin
   const dict = getDictionary(lang);
 
   return (
-    <main className="flex-1 pt-16">
+    <main className="flex-1">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -36,13 +36,26 @@ export default async function LayananPage(props: { params: Promise<{ lang: strin
           ),
         }}
       />
-      <section className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-4 text-center">
-        <h1 className="text-4xl sm:text-5xl font-extrabold font-display tracking-tight text-foreground mb-4">
-          {dict.layanan.overview.h1}
-        </h1>
-        <p className="text-lg text-muted leading-relaxed">
-          {dict.layanan.overview.intro}
-        </p>
+      <section className="sec" style={{ borderTop: 0 }}>
+        <div className="wrap">
+          <span className="idx">Layanan</span>
+          <h1
+            className="fk"
+            style={{
+              fontSize: "clamp(2.4rem, 5vw, 3.6rem)",
+              marginTop: "10px",
+              maxWidth: "16ch",
+            }}
+          >
+            {dict.layanan.overview.h1}
+          </h1>
+          <p
+            className="muted"
+            style={{ maxWidth: "52ch", marginTop: "14px", fontSize: "1.14rem" }}
+          >
+            {dict.layanan.overview.intro}
+          </p>
+        </div>
       </section>
       <ServicesGrid dict={dict} locale={lang} />
       <FinalCta dict={dict} />

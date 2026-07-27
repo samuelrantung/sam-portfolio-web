@@ -1,6 +1,4 @@
 // src/components/agency/home/FaqAccordion.tsx
-import { ChevronDown } from "lucide-react";
-
 export default function FaqAccordion({
   heading,
   items,
@@ -9,23 +7,28 @@ export default function FaqAccordion({
   items: { q: string; a: string }[];
 }) {
   return (
-    <section className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-      <h2 className="text-3xl sm:text-4xl font-bold font-display text-foreground text-center mb-12 reveal-on-scroll">
-        {heading}
-      </h2>
-      <div className="space-y-3">
-        {items.map((item) => (
-          <details
-            key={item.q}
-            className="reveal-on-scroll group rounded-2xl border border-border/40 bg-card px-6 py-4 transition-colors duration-200"
-          >
-            <summary className="flex items-center justify-between cursor-pointer list-none font-semibold text-foreground text-sm sm:text-base [&::-webkit-details-marker]:hidden">
-              {item.q}
-              <ChevronDown className="w-5 h-5 text-muted transition-transform duration-300 group-open:rotate-180 shrink-0 ml-4" />
-            </summary>
-            <p className="mt-3 text-sm text-muted leading-relaxed">{item.a}</p>
-          </details>
-        ))}
+    <section className="sec">
+      <div className="wrap max-w-4xl">
+        <div className="mb-8">
+          <span className="idx">FAQ</span>
+          <h2 className="fk mt-2.5">{heading}</h2>
+        </div>
+
+        <div className="divide-y divide-line border-y border-line">
+          {items.map((item) => (
+            <details key={item.q} className="group py-5 transition-colors">
+              <summary className="flex items-center justify-between cursor-pointer list-none font-semibold text-ink text-base sm:text-lg select-none [&::-webkit-details-marker]:hidden font-display">
+                <span>{item.q}</span>
+                <span className="hand text-2xl text-gray-1 transition-transform group-open:rotate-45 ml-4">
+                  +
+                </span>
+              </summary>
+              <p className="mt-3 text-gray-1 leading-relaxed text-sm sm:text-base max-w-[65ch]">
+                {item.a}
+              </p>
+            </details>
+          ))}
+        </div>
       </div>
     </section>
   );
