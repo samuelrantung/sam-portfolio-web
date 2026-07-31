@@ -9,7 +9,7 @@ import FinalCta from "@/components/agency/home/FinalCta";
 const projectConfig = {
   campaignBlast: {
     images: [] as string[],
-    href: "https://github.com/samuelrantung/campaign-blast-poc",
+    href: "https://wa.me/6282187792052?text=Halo imaginnative, saya tertarik demo campaign blast WhatsApp",
     isDemo: true,
   },
   seraya: {
@@ -131,9 +131,8 @@ export default async function PortofolioPage(
 
                   {config.images.length > 0 && (
                     <div
-                      className={`grid gap-4 mb-6 ${
-                        config.images.length > 1 ? "sm:grid-cols-2" : ""
-                      }`}
+                      className={`grid gap-4 mb-6 ${config.images.length > 1 ? "sm:grid-cols-2" : ""
+                        }`}
                     >
                       {config.images.map((src, i) => (
                         <div key={src} className="border border-line">

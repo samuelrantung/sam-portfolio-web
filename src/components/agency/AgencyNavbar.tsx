@@ -51,7 +51,7 @@ export default function AgencyNavbar({
           >
             Konsultasi <span className="arw">&rarr;</span>
           </WhatsAppLink>
-          <LanguageToggle locale={locale} />
+          {/* <LanguageToggle locale={locale} /> */}
         </div>
 
         {/* Mobile controls */}
@@ -93,9 +93,9 @@ export default function AgencyNavbar({
               {item.label}
             </Link>
           ))}
-          <div className="pt-3 border-t border-line">
+          {/* <div className="pt-3 border-t border-line">
             <LanguageToggle locale={locale} />
-          </div>
+          </div> */}
         </div>
       )}
     </nav>

@@ -370,8 +370,8 @@ export const id = {
         solution:
           "Kami merancang sistem untuk menganalisis riwayat transaksi pelanggan lewat metode RFM dan machine learning. Sistem ini otomatis mendeteksi siapa saja yang mulai jarang beli, lalu menyiapkan draf promo personal lewat WhatsApp dengan jeda pengiriman aman agar tidak dianggap spam.",
         result:
-          "Project ini masih berupa konsep awal (proof of concept) yang berjalan utuh dari pengolahan data pelanggan, prediksi churn, hingga simulasi kirim pesan. Seluruh kode programnya terbuka di GitHub.",
-        linkLabel: "Lihat di GitHub",
+          "Project ini masih berupa konsep awal (proof of concept) yang berjalan utuh dari pengolahan data pelanggan, prediksi churn, hingga simulasi kirim pesan.",
+        linkLabel: "Request demo",
         imageAlt1: "",
         imageAlt2: "",
       },
