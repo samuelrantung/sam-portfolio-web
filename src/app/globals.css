@@ -298,11 +298,11 @@ nav {
 
   .hero-media {
     border-right: 0;
-  }
-
-  .hero-media img {
     height: 380px;
   }
+
+  /* .hero-media img {
+  } */
 }
 
 /* SECTION base */
@@ -679,7 +679,7 @@ footer {
 }
 
 /* REUSABLE HAIRLINE LIST */
-.row-list > .row-item {
+.row-list>.row-item {
   padding: 20px 0;
   border-top: 1px solid var(--line);
   display: flex;
@@ -687,6 +687,6 @@ footer {
   align-items: flex-start;
 }
 
-.row-list > .row-item:last-child {
+.row-list>.row-item:last-child {
   border-bottom: 1px solid var(--line);
 }

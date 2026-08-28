@@ -1,46 +1,13 @@
 // src/app/[lang]/portofolio/page.tsx
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getDictionary, hasLocale, alternatesFor } from "@/lib/i18n";
+import { getDictionary, hasLocale, alternatesFor, localePath } from "@/lib/i18n";
 import { breadcrumbJsonLd, jsonLdScript } from "@/lib/schema";
+import { projectConfig, projectOrder } from "@/lib/portfolio";
 import FinalCta from "@/components/agency/home/FinalCta";
 
-const projectConfig = {
-  campaignBlast: {
-    images: [] as string[],
-    href: "https://wa.me/6282187792052?text=Halo imaginnative, saya tertarik demo campaign blast WhatsApp",
-    isDemo: true,
-  },
-  seraya: {
-    images: [
-      "/portfolio/seraya/seraya-hero-section.png",
-      "/portfolio/seraya/seraya-google-indexed.png",
-    ],
-    href: "https://seraya-agency.com/",
-    isDemo: false,
-  },
-  pempek: {
-    images: [
-      "/portfolio/pempek/hero.png",
-      "/portfolio/pempek/menu.png",
-    ],
-    href: "https://preview-pempek.imaginnative.com/",
-    isDemo: true,
-  },
-  manadoPost: {
-    images: ["/portfolio/manado-post/mp-app-carousel.png"],
-    href: "https://play.google.com/store/apps/details?id=com.mp.manadopost&hl=id",
-    isDemo: false,
-  },
-  hospital: {
-    images: [] as string[],
-    href: "",
-    isDemo: false,
-  },
-} as const;
-
-const projectOrder = ["seraya", "pempek", "campaignBlast", "manadoPost", "hospital"] as const;
 
 export async function generateMetadata(
   props: { params: Promise<{ lang: string }> }
@@ -123,7 +90,16 @@ export default async function PortofolioPage(
                     {config.isDemo ? ` / ${p.demoLabel}` : ""}
                   </span>
                   <h2 className="fk text-2xl sm:text-3xl mt-2 mb-1">
-                    {project.name}
+                    {config.slug ? (
+                      <Link
+                        href={localePath(lang, `/portofolio/${config.slug}`)}
+                        className="hover:underline underline-offset-4"
+                      >
+                        {project.name}
+                      </Link>
+                    ) : (
+                      project.name
+                    )}
                   </h2>
                   <p className="muted text-sm mb-6">
                     <b className="text-ink">{p.roleLabel}:</b> {project.role}
@@ -170,16 +146,26 @@ export default async function PortofolioPage(
                     </p>
                   </div>
 
-                  {config.href && project.linkLabel && (
-                    <a
-                      href={config.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="link-cta"
-                    >
-                      {project.linkLabel} <span className="arw">&rarr;</span>
-                    </a>
-                  )}
+                  <div className="flex flex-wrap items-center gap-x-8 gap-y-3">
+                    {config.slug && (
+                      <Link
+                        href={localePath(lang, `/portofolio/${config.slug}`)}
+                        className="link-cta"
+                      >
+                        {p.readCaseStudy} <span className="arw">&rarr;</span>
+                      </Link>
+                    )}
+                    {config.href && project.linkLabel && (
+                      <a
+                        href={config.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="link-cta"
+                      >
+                        {project.linkLabel} <span className="arw">&rarr;</span>
+                      </a>
+                    )}
+                  </div>
                 </article>
               );
             })}

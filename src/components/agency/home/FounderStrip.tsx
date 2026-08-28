@@ -31,7 +31,7 @@ export default function FounderStrip({
 
       <div className="k right relative !p-0 min-h-[380px] overflow-hidden border-t-[12px] border-b-[12px] min-[760px]:border-l-[12px] border-ink">
         <Image
-          src="/hero/hero-2.jpg"
+          src="/hero/hero-2.webp"
           alt="Samuel Rantung, Imaginnative"
           fill
           sizes="50vw"

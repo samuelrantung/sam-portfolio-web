@@ -15,8 +15,12 @@ export function organizationJsonLd() {
     telephone: PHONE_E164,
     address: {
       "@type": "PostalAddress",
+      // Must stay character-for-character in sync with the Google Business
+      // Profile listing; a NAP mismatch weakens both signals.
+      streetAddress: "Jl. S.H Sarundajang No.1 Blok D, Girian Indah, Kec. Madidir",
       addressLocality: "Bitung",
       addressRegion: "Sulawesi Utara",
+      postalCode: "95511",
       addressCountry: "ID",
     },
     areaServed: [
@@ -82,4 +86,52 @@ export function breadcrumbJsonLd(locale: Locale, crumbs: readonly Crumb[]) {
 
 export function jsonLdScript(data: object): string {
   return JSON.stringify(data).replace(/</g, "\\u003c");
+}
+
+// Article, not BlogPosting: these are standalone reference pages, not a
+// chronological blog feed. Both are valid; Article is the honest one here.
+export function articleJsonLd(article: {
+  slug: string;
+  metaTitle: string;
+  metaDescription: string;
+  published: string;
+  updated: string;
+}) {
+  const url = absolute(`/artikel/${article.slug}`);
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: article.metaTitle,
+    description: article.metaDescription,
+    url,
+    mainEntityOfPage: { "@type": "WebPage", "@id": url },
+    datePublished: article.published,
+    dateModified: article.updated,
+    inLanguage: "id-ID",
+    author: { "@type": "Person", name: "Samuel Rantung" },
+    publisher: { "@id": `${SITE_URL}/#organization` },
+  };
+}
+
+export function caseStudyJsonLd(caseStudy: {
+  locale: Locale;
+  slug: string;
+  name: string;
+  description: string;
+  imageUrls: readonly string[];
+}) {
+  const url = absolute(localePath(caseStudy.locale, `/portofolio/${caseStudy.slug}`));
+  return {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    name: caseStudy.name,
+    description: caseStudy.description,
+    url,
+    mainEntityOfPage: { "@type": "WebPage", "@id": url },
+    ...(caseStudy.imageUrls.length
+      ? { image: caseStudy.imageUrls.map((src) => `${SITE_URL}${src}`) }
+      : {}),
+    creator: { "@id": `${SITE_URL}/#organization` },
+    inLanguage: caseStudy.locale === "id" ? "id-ID" : "en",
+  };
 }

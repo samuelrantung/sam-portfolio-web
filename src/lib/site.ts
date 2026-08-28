@@ -1,6 +1,6 @@
 // src/lib/site.ts
-// Site-wide facts. Update GOOGLE_MAPS_URL once the Google Business Profile
-// is verified and has a public Maps link (Share > Copy link in Google Maps).
+// Site-wide facts. GOOGLE_MAPS_URL points at the verified Google Business
+// Profile; keep the NAP here in sync with the profile and with schema.ts.
 export const SITE_URL = "https://imaginnative.com";
 export const GA_ID = "G-22JNWXESNG";
 export const GOOGLE_MAPS_URL = "https://share.google/SEu8oUozE8bqjUgxN";

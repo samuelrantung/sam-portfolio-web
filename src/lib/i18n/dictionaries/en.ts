@@ -9,6 +9,7 @@ export const en: Dictionary = {
     about: "About",
     contact: "Contact",
     aboutSamuel: "About Samuel",
+    articles: "Articles",
   },
   cta: {
     whatsappLabel: "Chat with us on WhatsApp",
@@ -359,9 +360,17 @@ export const en: Dictionary = {
     roleLabel: "Our role",
     resultLabel: "Result",
     demoLabel: "Demo",
+    problemLabel: "The problem",
+    solutionLabel: "What we built",
+    caseStudyLabel: "Case study",
+    readCaseStudy: "Read the case study",
+    backToIndex: "All projects",
     projects: {
       campaignBlast: {
         name: "WhatsApp Campaign System with Machine Learning",
+        metaTitle: "WhatsApp Campaign System with Machine Learning | Case Study",
+        metaDescription:
+          "Proof of concept case study: a system that analyses transaction history with RFM and machine learning, then drafts personal WhatsApp offers for customers who have started drifting away.",
         category: "System · Product build (proof of concept)",
         role: "Full design & development: system architecture, machine learning model, and dashboard",
         problem:
@@ -376,6 +385,9 @@ export const en: Dictionary = {
       },
       seraya: {
         name: "PT Seraya Bahari Agensi",
+        metaTitle: "PT Seraya Bahari Agensi | Landing Page Case Study, Bitung",
+        metaDescription:
+          "Case study of a landing page for a shipping agency in Bitung: service profile, branch route map, local SEO, and a direct WhatsApp button. Indexed by Google and paid for itself with the first client.",
         category: "Landing page · Client work",
         role: "Full design & development, from zero to live",
         problem:
@@ -390,6 +402,9 @@ export const en: Dictionary = {
       },
       pempek: {
         name: "Pempek Bang Arie",
+        metaTitle: "Pempek Bang Arie | Culinary Business Website Case Study",
+        metaDescription:
+          "Case study of a demo website for a food business: an open-price menu, a frozen page with a cart, an outlet map, and orders that arrive as one tidy WhatsApp message.",
         category: "Landing page · Internal demo",
         role: "Full design & development: page structure, copywriting, and the WhatsApp ordering flow",
         problem:
@@ -404,6 +419,9 @@ export const en: Dictionary = {
       },
       manadoPost: {
         name: "Manado Post",
+        metaTitle: "Manado Post | News App Case Study",
+        metaDescription:
+          "Case study of the UI contribution to the Manado Post news app: implementing every layout and article screen from the Figma design through to release on the Google Play Store.",
         category: "Mobile app · UI contribution",
         role: "UI development: turning designs into a working app interface",
         problem:

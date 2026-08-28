@@ -11,7 +11,7 @@ export default function Hero({ dict }: { dict: Dictionary; locale: Locale }) {
       <div className="hero-grid">
         <div className="hero-media">
           <Image
-            src="/hero/hero-2.jpg"
+            src="/hero/hero-2.webp"
             alt="Samuel Rantung, Imaginnative"
             fill
             priority

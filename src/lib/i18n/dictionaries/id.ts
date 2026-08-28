@@ -7,6 +7,7 @@ export const id = {
     about: "Tentang",
     contact: "Kontak",
     aboutSamuel: "Tentang Founder",
+    articles: "Artikel",
   },
   cta: {
     whatsappLabel: "Konsultasi via WhatsApp",
@@ -360,9 +361,17 @@ export const id = {
     roleLabel: "Peran kami",
     resultLabel: "Hasil",
     demoLabel: "Demo",
+    problemLabel: "Masalah",
+    solutionLabel: "Yang kami bangun",
+    caseStudyLabel: "Studi kasus",
+    readCaseStudy: "Baca studi kasus",
+    backToIndex: "Semua project",
     projects: {
       campaignBlast: {
         name: "Sistem WhatsApp Campaign dengan Machine Learning",
+        metaTitle: "Sistem WhatsApp Campaign dengan Machine Learning | Studi Kasus",
+        metaDescription:
+          "Studi kasus proof of concept: sistem yang menganalisis riwayat transaksi dengan RFM dan machine learning, lalu menyiapkan draf promo WhatsApp untuk pelanggan yang mulai jarang beli.",
         category: "Sistem · Product build (proof of concept)",
         role: "Desain dan pengembangan penuh: arsitektur sistem, model machine learning, serta dashboard",
         problem:
@@ -377,6 +386,9 @@ export const id = {
       },
       seraya: {
         name: "PT Seraya Bahari Agensi",
+        metaTitle: "PT Seraya Bahari Agensi | Studi Kasus Landing Page Bitung",
+        metaDescription:
+          "Studi kasus landing page untuk agen kapal pelayaran di Bitung: profil jasa, peta rute cabang, SEO lokal, dan tombol WhatsApp. Terindeks Google dan balik modal dari klien pertama.",
         category: "Landing page · Klien",
         role: "Desain dan pengembangan penuh dari awal sampai siap pakai",
         problem:
@@ -391,6 +403,9 @@ export const id = {
       },
       pempek: {
         name: "Pempek Bang Arie",
+        metaTitle: "Pempek Bang Arie | Studi Kasus Website Usaha Kuliner",
+        metaDescription:
+          "Studi kasus demo website usaha kuliner: menu dengan harga terbuka, halaman frozen dengan keranjang, peta outlet, dan pemesanan yang tersusun rapi lewat satu pesan WhatsApp.",
         category: "Landing page · Demo internal",
         role: "Desain dan pengembangan penuh: struktur halaman, copywriting, dan alur pemesanan lewat WhatsApp",
         problem:
@@ -405,6 +420,9 @@ export const id = {
       },
       manadoPost: {
         name: "Manado Post",
+        metaTitle: "Manado Post | Studi Kasus Aplikasi Berita Mobile",
+        metaDescription:
+          "Studi kasus kontribusi UI pada aplikasi berita Manado Post: implementasi seluruh tata letak dan halaman berita dari desain Figma sampai rilis di Google Play Store.",
         category: "Aplikasi mobile · Kontribusi UI",
         role: "UI Development: mengubah rancangan desain mentah menjadi antarmuka aplikasi yang berfungsi lancar.",
         problem:
